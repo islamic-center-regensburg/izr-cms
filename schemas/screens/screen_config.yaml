@@ -1,0 +1,120 @@
+collection: screen_config
+schema: {}
+meta:
+  icon: settings
+  singleton: true
+  note: General settings for the mosque's single display.
+fields:
+  - field: id
+    type: integer
+    schema:
+      is_primary_key: true
+      has_auto_increment: true
+    meta:
+      interface: input
+      hidden: true
+      readonly: true
+  - field: timezone
+    type: string
+    schema:
+      is_nullable: false
+      default_value: UTC
+    meta:
+      interface: input
+      required: true
+      note: IANA timezone, for example Europe/Berlin. Set this to the mosque's timezone.
+  - field: languages
+    type: csv
+    schema:
+      is_nullable: false
+      default_value: de,en,ar
+    meta:
+      interface: select-dropdown-multiple
+      special: [cast-csv]
+      required: true
+      options:
+        choices:
+          - { text: German, value: de }
+          - { text: English, value: en }
+          - { text: Arabic, value: ar }
+      validation:
+        languages:
+          _nempty: true
+  - field: default_language
+    type: string
+    schema:
+      is_nullable: false
+      default_value: de
+    meta:
+      interface: select-dropdown
+      required: true
+      options:
+        choices:
+          - { text: German, value: de }
+          - { text: English, value: en }
+          - { text: Arabic, value: ar }
+      validation:
+        default_language:
+          _in: [de, en, ar]
+  - field: language_rotation_seconds
+    type: integer
+    schema:
+      is_nullable: false
+      default_value: 15
+    meta:
+      interface: input
+      required: true
+      note: Seconds between language changes; ignored when only one language is selected.
+      validation:
+        language_rotation_seconds:
+          _gte: 1
+  - field: theme
+    type: string
+    schema:
+      is_nullable: false
+      default_value: dark
+    meta:
+      interface: select-dropdown
+      required: true
+      options:
+        choices:
+          - { text: Light, value: light }
+          - { text: Dark, value: dark }
+          - { text: Automatic, value: auto }
+      validation:
+        theme:
+          _in: [light, dark, auto]
+  - field: orientation
+    type: string
+    schema:
+      is_nullable: false
+      default_value: landscape
+    meta:
+      interface: select-dropdown
+      required: true
+      options:
+        choices:
+          - { text: Landscape, value: landscape }
+          - { text: Portrait, value: portrait }
+      validation:
+        orientation:
+          _in: [landscape, portrait]
+  - field: refresh_interval_seconds
+    type: integer
+    schema:
+      is_nullable: false
+      default_value: 60
+    meta:
+      interface: input
+      required: true
+      validation:
+        refresh_interval_seconds:
+          _gte: 1
+  - field: show_clock
+    type: boolean
+    schema:
+      is_nullable: false
+      default_value: true
+    meta:
+      interface: boolean
+      special: [cast-boolean]

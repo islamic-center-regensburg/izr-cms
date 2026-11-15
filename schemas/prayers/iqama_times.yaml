@@ -1,0 +1,76 @@
+collection: iqama_times
+schema: {}
+meta:
+  icon: groups
+  note: Weekly iqama times; multiple entries may apply to the same prayer and weekday.
+fields:
+  - field: id
+    type: integer
+    schema:
+      is_primary_key: true
+      has_auto_increment: true
+    meta:
+      interface: input
+      hidden: true
+      readonly: true
+  - field: prayer
+    type: string
+    schema:
+      is_nullable: false
+    meta:
+      interface: select-dropdown
+      required: true
+      options:
+        choices:
+          - { text: Fajr, value: fajr }
+          - { text: Dhuhr, value: dhuhr }
+          - { text: Jumu'ah, value: jumuah }
+          - { text: Asr, value: asr }
+          - { text: Maghrib, value: maghrib }
+          - { text: Isha, value: isha }
+      validation:
+        prayer:
+          _in: [fajr, dhuhr, jumuah, asr, maghrib, isha]
+  - field: weekday
+    type: string
+    schema:
+      is_nullable: false
+    meta:
+      interface: select-dropdown
+      required: true
+      options:
+        choices:
+          - { text: Monday, value: monday }
+          - { text: Tuesday, value: tuesday }
+          - { text: Wednesday, value: wednesday }
+          - { text: Thursday, value: thursday }
+          - { text: Friday, value: friday }
+          - { text: Saturday, value: saturday }
+          - { text: Sunday, value: sunday }
+      validation:
+        weekday:
+          _in: [monday, tuesday, wednesday, thursday, friday, saturday, sunday]
+  - field: type
+    type: string
+    schema:
+      is_nullable: false
+    meta:
+      interface: select-dropdown
+      required: true
+      options:
+        choices:
+          - { text: Fixed time, value: fixed }
+          - { text: Prayer-time offset, value: offset }
+      validation:
+        type:
+          _in: [fixed, offset]
+  - field: fixed_time
+    type: time
+    meta:
+      interface: datetime
+      note: Local time; use only when type is fixed.
+  - field: offset_minutes
+    type: integer
+    meta:
+      interface: input
+      note: Signed minutes from the corresponding prayer time; use only when type is offset.
