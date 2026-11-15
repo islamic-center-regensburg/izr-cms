@@ -1,0 +1,93 @@
+collection: screen_sections
+schema: {}
+meta:
+  icon: view_carousel
+  sort_field: sort
+  display_template: "{{name}}"
+  note: Ordered content sections for the mosque's display.
+fields:
+  - field: id
+    type: integer
+    schema:
+      is_primary_key: true
+      has_auto_increment: true
+    meta:
+      interface: input
+      hidden: true
+      readonly: true
+  - field: name
+    type: string
+    schema:
+      is_nullable: false
+    meta:
+      interface: input
+      required: true
+      note: Internal label, not translated display content.
+  - field: type
+    type: string
+    schema:
+      is_nullable: false
+    meta:
+      interface: select-dropdown
+      required: true
+      options:
+        choices:
+          - { text: Prayer times, value: prayer_times }
+          - { text: News, value: news }
+          - { text: Events, value: events }
+          - { text: Campaign progress, value: campaign_progress }
+      validation:
+        type:
+          _in: [prayer_times, news, events, campaign_progress]
+  - field: enabled
+    type: boolean
+    schema:
+      is_nullable: false
+      default_value: true
+    meta:
+      interface: boolean
+      special: [cast-boolean]
+  - field: sort
+    type: integer
+    schema:
+      is_nullable: false
+      default_value: 0
+    meta:
+      interface: input
+      required: true
+      validation:
+        sort:
+          _gte: 0
+  - field: duration_seconds
+    type: integer
+    schema:
+      is_nullable: false
+      default_value: 15
+    meta:
+      interface: input
+      required: true
+      validation:
+        duration_seconds:
+          _gte: 1
+  - field: visible_from
+    type: timestamp
+    meta:
+      interface: datetime
+      note: Optional start of section visibility.
+  - field: visible_until
+    type: timestamp
+    meta:
+      interface: datetime
+      note: Optional end of section visibility.
+  - field: max_items
+    type: integer
+    schema:
+      is_nullable: false
+      default_value: 5
+    meta:
+      interface: input
+      required: true
+      note: Maximum content items; ignored for the prayer-times section.
+      validation:
+        max_items:
+          _gte: 1
