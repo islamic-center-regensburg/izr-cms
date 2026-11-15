@@ -1,0 +1,91 @@
+collection: donations
+schema: {}
+meta:
+  icon: payments
+  note: Anonymous donations; no donor identity or contact information.
+fields:
+  - field: id
+    type: integer
+    schema:
+      is_primary_key: true
+      has_auto_increment: true
+    meta:
+      interface: input
+      hidden: true
+      readonly: true
+  - field: campaign
+    type: integer
+    meta:
+      interface: select-dropdown-m2o
+      special: [m2o]
+      note: Optional; leave empty for a general donation.
+  - field: amount
+    type: decimal
+    schema:
+      is_nullable: false
+      numeric_precision: 12
+      numeric_scale: 2
+    meta:
+      interface: input
+      required: true
+      validation:
+        amount:
+          _gt: 0
+  - field: currency
+    type: string
+    schema:
+      is_nullable: false
+      max_length: 3
+      default_value: EUR
+    meta:
+      interface: input
+      required: true
+      note: Uppercase ISO 4217 currency code; must match the linked campaign.
+      validation:
+        currency:
+          _regex: "^[A-Z]{3}$"
+  - field: donated_at
+    type: timestamp
+    schema:
+      is_nullable: false
+    meta:
+      interface: datetime
+      required: true
+  - field: method
+    type: string
+    schema:
+      is_nullable: false
+    meta:
+      interface: select-dropdown
+      required: true
+      options:
+        choices:
+          - { text: Cash, value: cash }
+          - { text: Bank transfer, value: bank_transfer }
+          - { text: Online, value: online }
+      validation:
+        method:
+          _in: [cash, bank_transfer, online]
+  - field: status
+    type: string
+    schema:
+      is_nullable: false
+      default_value: pending
+    meta:
+      interface: select-dropdown
+      required: true
+      options:
+        choices:
+          - { text: Pending, value: pending }
+          - { text: Confirmed, value: confirmed }
+          - { text: Refunded, value: refunded }
+      validation:
+        status:
+          _in: [pending, confirmed, refunded]
+relations:
+  - field: campaign
+    related_collection: campaigns
+    schema:
+      on_delete: RESTRICT
+    meta:
+      one_field: null
