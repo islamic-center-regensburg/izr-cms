@@ -1,0 +1,54 @@
+collection: events
+schema: {}
+meta:
+  icon: event
+  note: Mosque event information; no registration.
+fields:
+  - field: id
+    type: integer
+    schema:
+      is_primary_key: true
+      has_auto_increment: true
+    meta:
+      interface: input
+      hidden: true
+      readonly: true
+  - field: translations
+    type: alias
+    schema: null
+    meta:
+      interface: translations
+      special: [translations]
+      options:
+        languageField: name
+        languageDirectionField: direction
+        defaultLanguage: de
+  - field: starts_at
+    type: timestamp
+    schema:
+      is_nullable: false
+    meta:
+      interface: datetime
+      required: true
+  - field: ends_at
+    type: timestamp
+    meta:
+      interface: datetime
+      note: Optional event end time.
+  - field: status
+    type: string
+    schema:
+      is_nullable: false
+      default_value: draft
+    meta:
+      interface: select-dropdown
+      required: true
+      options:
+        choices:
+          - { text: Draft, value: draft }
+          - { text: Published, value: published }
+          - { text: Cancelled, value: cancelled }
+          - { text: Archived, value: archived }
+      validation:
+        status:
+          _in: [draft, published, cancelled, archived]

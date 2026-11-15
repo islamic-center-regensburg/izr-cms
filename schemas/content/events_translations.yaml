@@ -1,0 +1,69 @@
+collection: events_translations
+schema: {}
+meta:
+  hidden: true
+  note: Localized event information.
+fields:
+  - field: id
+    type: integer
+    schema:
+      is_primary_key: true
+      has_auto_increment: true
+    meta:
+      interface: input
+      hidden: true
+      readonly: true
+  - field: events_id
+    type: integer
+    schema:
+      is_nullable: false
+    meta:
+      interface: select-dropdown-m2o
+      special: [m2o]
+      hidden: true
+  - field: languages_code
+    type: string
+    schema:
+      is_nullable: false
+      max_length: 2
+    meta:
+      interface: select-dropdown-m2o
+      special: [m2o]
+      hidden: true
+  - field: title
+    type: string
+    schema:
+      is_nullable: false
+    meta:
+      interface: input
+      required: true
+      hidden: false
+      readonly: false
+  - field: description
+    type: text
+    meta:
+      interface: input-rich-text-html
+      hidden: false
+      readonly: false
+  - field: location
+    type: string
+    meta:
+      interface: input
+      hidden: false
+      readonly: false
+relations:
+  - field: events_id
+    related_collection: events
+    schema:
+      on_delete: CASCADE
+    meta:
+      one_field: translations
+      junction_field: languages_code
+      one_deselect_action: delete
+  - field: languages_code
+    related_collection: languages
+    schema:
+      on_delete: RESTRICT
+    meta:
+      one_field: null
+      junction_field: events_id
