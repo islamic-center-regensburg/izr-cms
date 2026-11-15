@@ -1,0 +1,61 @@
+collection: prayer_times
+schema: {}
+meta:
+  icon: schedule
+  note: Daily prayer times in the mosque's local timezone.
+fields:
+  - field: date
+    type: date
+    schema:
+      is_primary_key: true
+      is_nullable: false
+    meta:
+      interface: datetime
+      required: true
+  - field: fajr
+    type: time
+    schema:
+      is_nullable: false
+    meta:
+      interface: datetime
+      required: true
+  - field: sunrise
+    type: time
+    schema:
+      is_nullable: false
+    meta:
+      interface: datetime
+      required: true
+  - field: dhuhr
+    type: time
+    schema:
+      is_nullable: false
+    meta:
+      interface: datetime
+      required: true
+  - field: jumuah
+    type: time
+    meta:
+      interface: datetime
+      note: Friday's Jumu'ah reference time, used for offset-based iqama times.
+  - field: asr
+    type: time
+    schema:
+      is_nullable: false
+    meta:
+      interface: datetime
+      required: true
+  - field: maghrib
+    type: time
+    schema:
+      is_nullable: false
+    meta:
+      interface: datetime
+      required: true
+  - field: isha
+    type: time
+    schema:
+      is_nullable: false
+    meta:
+      interface: datetime
+      required: true
