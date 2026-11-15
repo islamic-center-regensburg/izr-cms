@@ -1,0 +1,15 @@
+collection: news
+items:
+  - status: published
+    published_at: "2026-11-10T09:00:00+01:00"
+    translations:
+      - { languages_code: de, title: "Neue Gebetszeiten ab November", body: "Die Gebetszeiten wurden für die Wintermonate aktualisiert. Bitte beachten Sie die neuen Iqama-Zeiten." }
+      - { languages_code: en, title: "New prayer times from November", body: "Prayer times have been updated for the winter months. Please note the new iqama times." }
+      - { languages_code: ar, title: "مواقيت صلاة جديدة اعتباراً من نوفمبر", body: "تم تحديث مواقيت الصلاة لأشهر الشتاء. يرجى الانتباه إلى أوقات الإقامة الجديدة." }
+  - status: published
+    published_at: "2026-11-12T18:00:00+01:00"
+    expires_at: "2026-12-01T00:00:00+01:00"
+    translations:
+      - { languages_code: de, title: "Qur'an-Unterricht für Kinder", body: "Jeden Samstag um 10 Uhr findet Qur'an-Unterricht für Kinder statt. Anmeldung im Büro." }
+      - { languages_code: en, title: "Qur'an classes for children", body: "Qur'an classes for children take place every Saturday at 10 am. Register at the office." }
+      - { languages_code: ar, title: "دروس القرآن للأطفال", body: "تقام دروس القرآن للأطفال كل يوم سبت الساعة العاشرة صباحاً. التسجيل في المكتب." }
