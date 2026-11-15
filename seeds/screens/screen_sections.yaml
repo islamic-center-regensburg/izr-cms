@@ -1,0 +1,6 @@
+collection: screen_sections
+items:
+  - { name: Prayer times, type: prayer_times, enabled: true, sort: 1, duration_seconds: 30, max_items: 1 }
+  - { name: News, type: news, enabled: true, sort: 2, duration_seconds: 15, max_items: 5 }
+  - { name: Upcoming events, type: events, enabled: true, sort: 3, duration_seconds: 15, max_items: 3 }
+  - { name: Campaign progress, type: campaign_progress, enabled: true, sort: 4, duration_seconds: 15, max_items: 2 }

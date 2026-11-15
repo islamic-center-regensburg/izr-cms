@@ -1,0 +1,37 @@
+collection: iqama_times
+items:
+  - { prayer: fajr, weekday: monday, type: offset, offset_minutes: 20 }
+  - { prayer: fajr, weekday: tuesday, type: offset, offset_minutes: 20 }
+  - { prayer: fajr, weekday: wednesday, type: offset, offset_minutes: 20 }
+  - { prayer: fajr, weekday: thursday, type: offset, offset_minutes: 20 }
+  - { prayer: fajr, weekday: friday, type: offset, offset_minutes: 20 }
+  - { prayer: fajr, weekday: saturday, type: offset, offset_minutes: 20 }
+  - { prayer: fajr, weekday: sunday, type: offset, offset_minutes: 20 }
+  - { prayer: dhuhr, weekday: monday, type: offset, offset_minutes: 10 }
+  - { prayer: dhuhr, weekday: tuesday, type: offset, offset_minutes: 10 }
+  - { prayer: dhuhr, weekday: wednesday, type: offset, offset_minutes: 10 }
+  - { prayer: dhuhr, weekday: thursday, type: offset, offset_minutes: 10 }
+  - { prayer: dhuhr, weekday: saturday, type: offset, offset_minutes: 10 }
+  - { prayer: dhuhr, weekday: sunday, type: offset, offset_minutes: 10 }
+  - { prayer: jumuah, weekday: friday, type: fixed, fixed_time: "13:00:00" }
+  - { prayer: asr, weekday: monday, type: offset, offset_minutes: 10 }
+  - { prayer: asr, weekday: tuesday, type: offset, offset_minutes: 10 }
+  - { prayer: asr, weekday: wednesday, type: offset, offset_minutes: 10 }
+  - { prayer: asr, weekday: thursday, type: offset, offset_minutes: 10 }
+  - { prayer: asr, weekday: friday, type: offset, offset_minutes: 10 }
+  - { prayer: asr, weekday: saturday, type: offset, offset_minutes: 10 }
+  - { prayer: asr, weekday: sunday, type: offset, offset_minutes: 10 }
+  - { prayer: maghrib, weekday: monday, type: offset, offset_minutes: 5 }
+  - { prayer: maghrib, weekday: tuesday, type: offset, offset_minutes: 5 }
+  - { prayer: maghrib, weekday: wednesday, type: offset, offset_minutes: 5 }
+  - { prayer: maghrib, weekday: thursday, type: offset, offset_minutes: 5 }
+  - { prayer: maghrib, weekday: friday, type: offset, offset_minutes: 5 }
+  - { prayer: maghrib, weekday: saturday, type: offset, offset_minutes: 5 }
+  - { prayer: maghrib, weekday: sunday, type: offset, offset_minutes: 5 }
+  - { prayer: isha, weekday: monday, type: offset, offset_minutes: 10 }
+  - { prayer: isha, weekday: tuesday, type: offset, offset_minutes: 10 }
+  - { prayer: isha, weekday: wednesday, type: offset, offset_minutes: 10 }
+  - { prayer: isha, weekday: thursday, type: offset, offset_minutes: 10 }
+  - { prayer: isha, weekday: friday, type: offset, offset_minutes: 10 }
+  - { prayer: isha, weekday: saturday, type: offset, offset_minutes: 10 }
+  - { prayer: isha, weekday: sunday, type: offset, offset_minutes: 10 }

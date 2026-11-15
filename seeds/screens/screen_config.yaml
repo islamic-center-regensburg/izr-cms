@@ -1,0 +1,10 @@
+collection: screen_config
+items:
+  - timezone: Europe/Berlin
+    languages: [de, en, ar]
+    default_language: de
+    language_rotation_seconds: 15
+    theme: dark
+    orientation: landscape
+    refresh_interval_seconds: 60
+    show_clock: true

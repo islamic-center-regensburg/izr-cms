@@ -1,0 +1,7 @@
+collection: donations
+items:
+  - { campaign: 1, amount: 250.00, currency: EUR, donated_at: "2026-11-02T12:30:00+01:00", method: cash, status: confirmed }
+  - { campaign: 1, amount: 1000.00, currency: EUR, donated_at: "2026-11-06T09:15:00+01:00", method: bank_transfer, status: confirmed }
+  - { campaign: 2, amount: 75.50, currency: EUR, donated_at: "2026-11-10T17:45:00+01:00", method: online, status: confirmed }
+  - { campaign: 2, amount: 120.00, currency: EUR, donated_at: "2026-11-13T20:00:00+01:00", method: online, status: pending }
+  - { amount: 40.00, currency: EUR, donated_at: "2026-11-14T13:00:00+01:00", method: cash, status: confirmed }
