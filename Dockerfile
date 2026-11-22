@@ -8,6 +8,7 @@ RUN cd /opt/schema-loader && npm ci --omit=dev \
 
 COPY --chown=node:node scripts/ /opt/schema-loader/scripts/
 COPY --chown=node:node schemas/ /directus/schemas/
+COPY --chown=node:node policies/ /directus/policies/
 COPY --chown=node:node seeds/ /directus/seeds/
 COPY --chown=node:node entrypoint.sh /opt/schema-loader/entrypoint.sh
 
