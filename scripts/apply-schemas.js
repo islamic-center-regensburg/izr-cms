@@ -3,10 +3,19 @@ import path from 'node:path';
 import { setTimeout as sleep } from 'node:timers/promises';
 import yaml from 'js-yaml';
 import { seedExampleData } from './seed-data.js';
+import { applyPolicies } from './apply-policies.js';
 
 const baseUrl = 'http://127.0.0.1:8056';
 const schemasDir = '/directus/schemas';
 const stateFile = '/directus/schema-state/managed-collections.json';
+
+// Directus system collections that schemas are allowed to relate to (e.g. a
+// file field). These never appear in `/schema/snapshot`'s `collections` or
+// `fields` (that endpoint only reports custom, user-managed collections), so
+// the usual "does the target collection exist" check can't see them, and
+// their primary key can't be looked up the normal way either — every
+// relation to one of these must set `schema.foreign_key_column` explicitly.
+const SYSTEM_RELATION_TARGETS = new Set(['directus_files']);
 
 function isObject(value) {
   return value !== null && typeof value === 'object' && !Array.isArray(value);
@@ -181,9 +190,13 @@ function desiredSnapshot(snapshot, definitions, previous) {
   for (const definition of definitions) {
     for (const relation of definition.relations ?? []) {
       const target = definitions.find((item) => item.collection === relation.related_collection);
-      const targetExists = target || snapshot.collections.some((item) => item.collection === relation.related_collection);
+      const targetExists = target || SYSTEM_RELATION_TARGETS.has(relation.related_collection)
+        || snapshot.collections.some((item) => item.collection === relation.related_collection);
       if (!targetExists || removed.has(relation.related_collection)) {
         throw new Error(`Relation ${definition.collection}.${relation.field} references missing collection ${relation.related_collection}`);
+      }
+      if (SYSTEM_RELATION_TARGETS.has(relation.related_collection) && !relation.schema?.foreign_key_column) {
+        throw new Error(`Relation ${definition.collection}.${relation.field} must set schema.foreign_key_column (target ${relation.related_collection} isn't introspectable)`);
       }
       if (target && relation.meta.one_field
         && !target.fields.some((field) => field.field === relation.meta.one_field && field.type === 'alias')) {
@@ -309,6 +322,7 @@ async function main() {
   await writeManagedCollections(names);
   await seedItems(definitions, token);
   await seedExampleData(definitions, request, token);
+  await applyPolicies(request, token);
 }
 
 main().catch((error) => {
