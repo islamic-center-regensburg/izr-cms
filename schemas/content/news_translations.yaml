@@ -42,7 +42,7 @@ fields:
   - field: slug
     type: string
     schema:
-      is_nullable: false
+      is_nullable: true
     meta:
       interface: input
       required: true
