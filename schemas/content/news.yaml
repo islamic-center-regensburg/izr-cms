@@ -49,3 +49,18 @@ fields:
     meta:
       interface: datetime
       note: Optional end of visibility; empty means no expiry.
+  - field: thumbnail
+    type: uuid
+    schema:
+      is_nullable: true
+    meta:
+      interface: file-image
+      special: [file]
+      note: Optional thumbnail shown on the news card; falls back to the default background when empty.
+relations:
+  - field: thumbnail
+    related_collection: directus_files
+    schema:
+      foreign_key_column: id
+      on_delete: SET NULL
+    meta: {}

@@ -2,9 +2,9 @@ collection: screen_config
 items:
   - timezone: Europe/Berlin
     languages: [de, en, ar]
-    default_language: de
-    language_rotation_seconds: 15
-    theme: dark
+    mode: automatic
+    manual_section: null
+    manual_language: de
     orientation: landscape
     refresh_interval_seconds: 60
     show_clock: true

@@ -3,13 +3,242 @@ items:
   - status: published
     published_at: "2026-11-10T09:00:00+01:00"
     translations:
-      - { languages_code: de, title: "Neue Gebetszeiten ab November", body: "Die Gebetszeiten wurden für die Wintermonate aktualisiert. Bitte beachten Sie die neuen Iqama-Zeiten." }
-      - { languages_code: en, title: "New prayer times from November", body: "Prayer times have been updated for the winter months. Please note the new iqama times." }
-      - { languages_code: ar, title: "مواقيت صلاة جديدة اعتباراً من نوفمبر", body: "تم تحديث مواقيت الصلاة لأشهر الشتاء. يرجى الانتباه إلى أوقات الإقامة الجديدة." }
+      - { languages_code: de, slug: "neue-gebetszeiten-ab-november", title: "Neue Gebetszeiten ab November", body: "Die Gebetszeiten wurden für die Wintermonate aktualisiert. Bitte beachten Sie die neuen Iqama-Zeiten." , screen_summary: '<p>Die Gebetszeiten wurden für die Wintermonate aktualisiert. Bitte beachten Sie die neuen Iqama-Zeiten.</p>' }
+      - { languages_code: en, slug: "new-prayer-times-from-november", title: "New prayer times from November", body: "Prayer times have been updated for the winter months. Please note the new iqama times." , screen_summary: '<p>Prayer times have been updated for the winter months. Please note the new iqama times.</p>' }
+      - { languages_code: ar, slug: "mawaqit-salat-jadida-min-noofmbr", title: "مواقيت صلاة جديدة اعتباراً من نوفمبر", body: "تم تحديث مواقيت الصلاة لأشهر الشتاء. يرجى الانتباه إلى أوقات الإقامة الجديدة." , screen_summary: '<p>تم تحديث مواقيت الصلاة لأشهر الشتاء. يرجى الانتباه إلى أوقات الإقامة الجديدة.</p>' }
   - status: published
     published_at: "2026-11-12T18:00:00+01:00"
     expires_at: "2026-12-01T00:00:00+01:00"
     translations:
-      - { languages_code: de, title: "Qur'an-Unterricht für Kinder", body: "Jeden Samstag um 10 Uhr findet Qur'an-Unterricht für Kinder statt. Anmeldung im Büro." }
-      - { languages_code: en, title: "Qur'an classes for children", body: "Qur'an classes for children take place every Saturday at 10 am. Register at the office." }
-      - { languages_code: ar, title: "دروس القرآن للأطفال", body: "تقام دروس القرآن للأطفال كل يوم سبت الساعة العاشرة صباحاً. التسجيل في المكتب." }
+      - { languages_code: de, slug: "quran-unterricht-fuer-kinder", title: "Qur'an-Unterricht für Kinder", body: "Jeden Samstag um 10 Uhr findet Qur'an-Unterricht für Kinder statt. Anmeldung im Büro." , screen_summary: '<p>Jeden Samstag um 10 Uhr findet Qur’an-Unterricht für Kinder statt. Anmeldung im Büro.</p>' }
+      - { languages_code: en, slug: "quran-classes-for-children", title: "Qur'an classes for children", body: "Qur'an classes for children take place every Saturday at 10 am. Register at the office." , screen_summary: '<p>Qur’an classes for children take place every Saturday at 10 am. Register at the office.</p>' }
+      - { languages_code: ar, slug: "duroos-alquran-lilatfal", title: "دروس القرآن للأطفال", body: "تقام دروس القرآن للأطفال كل يوم سبت الساعة العاشرة صباحاً. التسجيل في المكتب." , screen_summary: '<p>تقام دروس القرآن للأطفال كل يوم سبت الساعة العاشرة صباحاً. التسجيل في المكتب.</p>' }
+  - status: published
+    published_at: "2026-10-26T13:01:21+01:00"
+    translations:
+      - languages_code: de
+        slug: "som-save-our-mosque"
+        title: "SOM – Save Our Mosque"
+        screen_summary: '<p>Das IZR möchte das gesamte Grundstück der Rahman-Moschee kaufen und den Standort dauerhaft sichern. Kaufsumme: 1.200.000 €, Zeitrahmen: 12 Monate.</p>'
+        body: |
+          <h2>SOM – Save Our Mosque</h2>
+          <p><strong>SOM steht für „Save Our Mosque“ – „Unsere Moschee erhalten“.</strong> Mit dieser Kampagne möchte das Islamische Zentrum Regensburg (IZR) das gesamte Grundstück der Rahman-Moschee kaufen und den Standort dauerhaft sichern.</p>
+          <h2>Unsere Geschichte</h2>
+          <p>Unsere Gemeinde begann Ende der 1990er-Jahre mit einem Gebetsraum in der Weißenburgerstraße. Viele Ehrenamtliche und Spender haben seither am Aufbau des Zentrums mitgewirkt.</p>
+          <ul>
+          <li><strong>2007:</strong> Umzug in die Alte Straubinger Straße</li>
+          <li><strong>2008–2013:</strong> Aufbau des heutigen Zentrums</li>
+          <li><strong>2013:</strong> Eröffnung des Islamischen Zentrums</li>
+          </ul>
+          <p>Heute ist die Rahman-Moschee ein Ort für Gebet, Unterricht und Begegnung. Kinder, Erwachsene und Familien nutzen die Angebote der Gemeinde.</p>
+          <h2>Was im Zentrum stattfindet</h2>
+          <h3>Glaube und religiöses Leben</h3>
+          <ul>
+          <li>Tägliche Gebete und Freitagsgebet</li>
+          <li>Ramadan, Tarawih-Gebete und gemeinsames Fastenbrechen</li>
+          <li>Kostenloses Ramadan-Iftar für Bedürftige und Menschen in schwierigen Lebenssituationen</li>
+          <li>Islamische Feste, Hochzeiten, Beschneidungsfeiern und Trauerfeiern</li>
+          <li>Islamische Bestattungsbegleitung und Seelsorge</li>
+          </ul>
+          <h3>Bildung</h3>
+          <ul>
+          <li>Arabisch- und Qur'an-Unterricht für Kinder und Erwachsene</li>
+          <li>Islamischer Religionsunterricht für Kinder sowie Vermittlung islamischer Werte, Geschichte und Lebenspraxis</li>
+          <li>Seminare und Vorträge für Muslime und Nichtmuslime</li>
+          <li>Kultur- und Kunstabende sowie interkulturelle Bildungsangebote</li>
+          </ul>
+          <h3>Gemeinschaft und Beratung</h3>
+          <ul>
+          <li>Treffpunkt für Kinder, Jugendliche, Frauen, Männer, Senioren und Familien</li>
+          <li>Beratung, Seelsorge und gegenseitige Hilfe in schwierigen Lebenssituationen</li>
+          <li>Offene Moschee, Führungen und Gespräche für interessierte Besucher</li>
+          </ul>
+          <h3>Sport und Freizeit</h3>
+          <ul>
+          <li>Jährliche interkulturelle Fußballturniere</li>
+          <li>Fitness- und Sportangebote für unterschiedliche Altersgruppen</li>
+          <li>Kinderprogramme, Freizeitaktivitäten und Gemeinschaftsveranstaltungen</li>
+          <li>Teamgeist, Fairness und respektvoller Umgang im Sport</li>
+          </ul>
+          <h3>Dialog und Zusammenarbeit</h3>
+          <p>Das Zentrum arbeitet mit Moscheen und islamischen Zentren in Regensburg und Bayern sowie mit der Stadt Regensburg zusammen. Es steht im Austausch mit Kirchen, Vereinen, sozialen Einrichtungen, politischen Institutionen, Universitäten und Schulen. Diese Zusammenarbeit dient dem gegenseitigen Verständnis und einem friedlichen Zusammenleben.</p>
+          <p>Die Angebote werden von Ehrenamtlichen getragen.</p>
+          <h2>Unser Ziel: das Moscheegrundstück kaufen</h2>
+          <p>Damit die Gemeinde ihre religiöse, pädagogische und soziale Arbeit fortsetzen kann, möchten wir das Grundstück dauerhaft sichern.</p>
+          <div>
+          <ul>
+          <li><strong>Kaufsumme:</strong> 1.200.000 €</li>
+          <li><strong>Zeitrahmen:</strong> 12 Monate</li>
+          <li><strong>Zweck:</strong> Kauf des gesamten Grundstücks und dauerhafte Sicherung des Moscheestandorts</li>
+          </ul>
+          </div>
+          <p>Die Kampagne finanziert zunächst den Grundstückskauf. Weitere Bau- und Entwicklungsmaßnahmen sollen später gesondert geplant und finanziert werden.</p>
+          <h2>So können Sie helfen</h2>
+          <p>Einzelpersonen, Familien, Unternehmen, Vereine und befreundete Gemeinden können die Kampagne unterstützen:</p>
+          <ul>
+          <li>Eine Spendenzusage für den Grundstückskauf geben</li>
+          <li>Im Rahmen der eigenen Möglichkeiten spenden</li>
+          <li>Familie, Freunde und Geschäftspartner auf die Kampagne aufmerksam machen</li>
+          <li>Den Kontakt zu weiteren Unterstützern und Förderern herstellen</li>
+          <li>Den Spendenaufruf teilen</li>
+          </ul>
+          <p>Auch kleine oder regelmäßige Spenden helfen beim Kauf des Grundstücks. Vielen Dank für Ihre Unterstützung.</p>
+          <h2>Kontakt</h2>
+          <p>Islamisches Zentrum Regensburg (IZR) – Rahman-Moschee<br>Alte Straubinger Straße 33<br>93055 Regensburg</p>
+          <p><a href="https://iz-regensburg.de">iz-regensburg.de</a><br><a href="mailto:vorstand@iz-regensburg.de">vorstand@iz-regensburg.de</a></p>
+          <p>Möge Allah Sie für Ihre Unterstützung belohnen.</p>
+      - languages_code: en
+        slug: "som-save-our-mosque"
+        title: "SOM – Save Our Mosque"
+        screen_summary: '<p>The IZR aims to purchase the entire Rahman Mosque property and secure the mosque’s location permanently. Amount needed: €1,200,000; target timeframe: 12 months.</p>'
+        body: |
+          <h2>SOM – Save Our Mosque</h2>
+          <p><strong>SOM stands for Save Our Mosque.</strong> This campaign by the Islamic Center of Regensburg (IZR) aims to purchase the entire Rahman Mosque property and secure the mosque's location permanently.</p>
+          <h2>Our history</h2>
+          <p>Our community began in the late 1990s with a small prayer room on Weißenburger Street. Volunteers and donors have helped build and support the center over the years.</p>
+          <ul>
+          <li><strong>2007:</strong> Move to Alte Straubinger Straße</li>
+          <li><strong>2008–2013:</strong> Construction of the current center</li>
+          <li><strong>2013:</strong> Opening of the Islamic Center</li>
+          </ul>
+          <p>Today, the Rahman Mosque welcomes children, adults, and families for prayer, learning, and community activities. It also provides a place to meet neighbors of different faiths and backgrounds.</p>
+          <h2>What happens at the center</h2>
+          <h3>Worship and religious life</h3>
+          <ul>
+          <li>Daily prayers and Friday congregational prayer</li>
+          <li>Ramadan, Tarawih and Qiyam prayers</li>
+          <li>Free community iftar meals for people in need or facing difficult circumstances</li>
+          <li>Islamic holidays, weddings, circumcision ceremonies, and funeral gatherings</li>
+          <li>Islamic burial support and care for bereaved families</li>
+          </ul>
+          <h3>Education</h3>
+          <ul>
+          <li>Arabic and Qur'an lessons for children and adults</li>
+          <li>Teaching children Islamic principles, values, and religious practice</li>
+          <li>Seminars and lectures for Muslims and non-Muslims</li>
+          <li>Cultural and artistic evenings and educational programs</li>
+          <li>Teaching Islamic values and good conduct to younger generations</li>
+          </ul>
+          <h3>Family and community</h3>
+          <ul>
+          <li>A meeting place for children, young people, women, men, elders, and families</li>
+          <li>Guidance, counseling, and support during difficult times</li>
+          <li>Opportunities to meet, cooperate, and help one another</li>
+          <li>Open mosque days where visitors can learn about Islam and its practices</li>
+          </ul>
+          <h3>Sport and recreation</h3>
+          <ul>
+          <li>An annual football tournament bringing different communities together</li>
+          <li>Sports and fitness activities for different age groups</li>
+          <li>Recreational programs for children and young people</li>
+          <li>Teamwork, fairness, and respect through sport</li>
+          </ul>
+          <h3>Dialogue and cooperation</h3>
+          <p>The center works with mosques and Islamic centers in Regensburg and Bavaria and with the City of Regensburg. It maintains contact with churches, associations, social institutions, political institutions, universities, and schools to support mutual understanding, respect, and peaceful coexistence.</p>
+          <p>Volunteers give their time to run these activities.</p>
+          <h2>Our goal: purchasing the mosque land</h2>
+          <p>We want to secure the land permanently so the center can continue its religious, educational, and social work.</p>
+          <div>
+          <ul>
+          <li><strong>Amount needed:</strong> €1,200,000</li>
+          <li><strong>Target timeframe:</strong> 12 months</li>
+          <li><strong>Purpose:</strong> Purchasing the entire mosque property and securing its location permanently</li>
+          </ul>
+          </div>
+          <p>This campaign funds the land purchase first. Future construction and development work will be planned and funded separately at a later stage.</p>
+          <h2>How you can help</h2>
+          <p>Individuals, families, businesses, associations, and other mosques can support the campaign by:</p>
+          <ul>
+          <li>Making a financial pledge toward the land purchase</li>
+          <li>Donating according to their means</li>
+          <li>Telling family, friends, and acquaintances about the campaign</li>
+          <li>Putting us in touch with business owners and other potential donors</li>
+          <li>Sharing the donation appeal</li>
+          </ul>
+          <p>Small and regular donations also help us reach the amount needed. Thank you for your support.</p>
+          <h2>Contact</h2>
+          <p>Islamic Center of Regensburg (IZR) – Rahman Mosque<br>Alte Straubinger Straße 33<br>93055 Regensburg</p>
+          <p><a href="https://iz-regensburg.de">iz-regensburg.de</a><br><a href="mailto:vorstand@iz-regensburg.de">vorstand@iz-regensburg.de</a></p>
+          <p>The Messenger of Allah, peace and blessings be upon him, said: “Whoever builds a mosque for the sake of Allah, Allah will build for him the like of it in Paradise.”</p>
+          <p>May Allah accept your contributions and bless you and your families.</p>
+      - languages_code: ar
+        slug: "som-save-our-mosque-ar"
+        title: "SOM – Save Our Mosque | نحافظ على مسجدنا"
+        screen_summary: '<p>يهدف المركز الإسلامي في ريغنسبورغ إلى شراء كامل أرض مسجد الرحمن وتأمين مقر المسجد بشكل دائم. المبلغ المطلوب: 1,200,000 يورو، والمدة المستهدفة: 12 شهراً.</p>'
+        body: |
+          <h2>حملة <bdi>SOM – Save Our Mosque</bdi></h2>
+          <p><strong>يرمز اسم SOM إلى العبارة الإنجليزية <bdi>Save Our Mosque</bdi>، أي «نحافظ على مسجدنا».</strong> أطلق المركز الإسلامي في ريغنسبورغ (IZR) هذه الحملة لشراء كامل أرض مسجد الرحمن وتأمين مقر المسجد بشكل دائم.</p>
+          <h2>تاريخ المركز</h2>
+          <p>بدأت جماعتنا في أواخر تسعينيات القرن الماضي بمصلّى بسيط في شارع فايسنبورغر. وساهم متطوعون ومتبرعون على مر السنين في بناء المركز وتطويره.</p>
+          <ul>
+          <li><strong>2007:</strong> الانتقال إلى شارع ألته شتراوبينغر</li>
+          <li><strong>2008–2013:</strong> بناء المركز الحالي</li>
+          <li><strong>2013:</strong> افتتاح المركز الإسلامي</li>
+          </ul>
+          <p>يستقبل مسجد الرحمن اليوم الأطفال والكبار والأسر للصلاة والتعلم واللقاء، ويتيح التواصل مع الجيران وأتباع الديانات والثقافات المختلفة.</p>
+          <h2>أنشطة المركز</h2>
+          <h3>العبادة والحياة الإسلامية</h3>
+          <ul>
+          <li>إقامة الصلوات اليومية وصلاة الجمعة</li>
+          <li>صلاة التراويح والقيام خلال شهر رمضان</li>
+          <li>موائد إفطار جماعي مجانية للمحتاجين ولمن يمرون بظروف صعبة</li>
+          <li>الأعياد والمناسبات الإسلامية وحفلات الزواج والختان ومجالس العزاء</li>
+          <li>المساعدة في شؤون الدفن الإسلامي ومساندة أهل المتوفى</li>
+          </ul>
+          <h3>التعليم</h3>
+          <ul>
+          <li>تعليم اللغة العربية والقرآن الكريم للأطفال والكبار</li>
+          <li>تعليم الأطفال مبادئ الإسلام وقيمه وأحكامه</li>
+          <li>ندوات ومحاضرات للمسلمين وغير المسلمين</li>
+          <li>أمسيات ثقافية وفنية وبرامج تعليمية</li>
+          <li>تعليم القيم الإسلامية والأخلاق للأجيال الناشئة</li>
+          </ul>
+          <h3>الأسرة والمجتمع</h3>
+          <ul>
+          <li>ملتقى للأطفال والشباب والنساء والرجال وكبار السن والعائلات</li>
+          <li>الإرشاد والدعم والمواساة في الأوقات الصعبة</li>
+          <li>التعارف والتعاون والمساعدة المتبادلة</li>
+          <li>أيام المسجد المفتوح واستقبال الزوار وتعريفهم بالإسلام وشعائره</li>
+          </ul>
+          <h3>الرياضة والترفيه</h3>
+          <ul>
+          <li>بطولة كرة قدم سنوية تجمع أبناء الجاليات المختلفة</li>
+          <li>أنشطة رياضية ولياقة بدنية لمختلف الأعمار</li>
+          <li>برامج ترفيهية وأنشطة للأطفال والشباب</li>
+          <li>تعلم التعاون والعدل والاحترام من خلال الرياضة</li>
+          </ul>
+          <h3>الحوار والتعاون</h3>
+          <p>يتعاون المركز مع المساجد والمراكز الإسلامية في ريغنسبورغ وبافاريا، ومع بلدية المدينة. ويتواصل مع الكنائس والجمعيات والمؤسسات الاجتماعية والجهات السياسية والجامعات والمدارس، لدعم التفاهم والاحترام المتبادل والتعايش السلمي.</p>
+          <p>يقوم متطوعون على هذه الأنشطة ويخصصون لها وقتهم وجهدهم.</p>
+          <h2>هدف الحملة: شراء أرض المسجد</h2>
+          <p>نريد تأمين أرض المسجد بشكل دائم حتى يتمكن المركز من مواصلة عمله الديني والتعليمي والاجتماعي.</p>
+          <div>
+          <ul>
+          <li><strong>المبلغ المطلوب:</strong> 1,200,000 يورو</li>
+          <li><strong>المدة المستهدفة:</strong> 12 شهرًا</li>
+          <li><strong>الغرض:</strong> شراء كامل أرض المسجد وتأمين مقره بشكل دائم</li>
+          </ul>
+          </div>
+          <p>تُخصص هذه الحملة أولًا لشراء الأرض. أما أعمال البناء والتطوير المستقبلية فسيُخطط لها ويُجمع تمويلها بشكل منفصل في مرحلة لاحقة.</p>
+          <h2>كيف يمكنك المساعدة؟</h2>
+          <p>يمكن للأفراد والأسر وأصحاب الشركات والجمعيات والمساجد دعم الحملة من خلال:</p>
+          <ul>
+          <li>تقديم تعهد مالي لشراء أرض المسجد</li>
+          <li>التبرع بحسب الاستطاعة</li>
+          <li>تعريف الأسرة والأصدقاء والمعارف بالحملة</li>
+          <li>مساعدتنا في التواصل مع التجار وأصحاب الشركات والمتبرعين</li>
+          <li>مشاركة نداء التبرع</li>
+          </ul>
+          <p>تساعدنا التبرعات الصغيرة والمنتظمة أيضًا على جمع المبلغ المطلوب. نشكركم على دعمكم.</p>
+          <h2>التواصل</h2>
+          <p>المركز الإسلامي في ريغنسبورغ (IZR) – مسجد الرحمن</p>
+          <p>Alte Straubinger Straße 33<br>93055 Regensburg</p>
+          <p><a href="https://iz-regensburg.de">iz-regensburg.de</a><br><a href="mailto:vorstand@iz-regensburg.de">vorstand@iz-regensburg.de</a></p>
+          <p>قال رسول الله صلى الله عليه وسلم: «مَنْ بَنَى مَسْجِدًا لِلَّهِ بَنَى اللَّهُ لَهُ فِي الْجَنَّةِ مِثْلَهُ».</p>
+          <p>نسأل الله أن يتقبل منكم ويبارك فيكم وفي أهليكم وأبنائكم. جزاكم الله خيرًا.</p>
+  - status: published
+    published_at: "2026-10-26T11:44:17+01:00"
+    translations:
+      - { languages_code: de, slug: "freitagsgebet-neue-zeiten-im-winter", title: "Freitagsgebet: neue Zeiten im Winter", body: "<p>Seit der Umstellung auf die Winterzeit beginnt das Freitagsgebet (Jumu'ah) im <strong>Islamischen Zentrum Regensburg</strong> (Alte Straubinger Str. 33) zu neuen Zeiten. Die Chutba halten wir in zwei Sprachen:</p><p><strong>Englisch/Deutsch:</strong> 12:30 Uhr<br><strong>Arabisch:</strong> 13:30 Uhr</p><p>Kommt einfach zu dem Gebet, bei dem ihr die Predigt am besten versteht. Und sagt es bitte in eurer Familie und im Freundeskreis weiter.</p>" , screen_summary: '<p>Seit der Zeitumstellung gilt ein neuer Zeitplan für das Freitagsgebet: Englisch/Deutsch um 12:30 Uhr, Arabisch um 13:30 Uhr.</p>' }
+      - { languages_code: en, slug: "friday-prayer-new-winter-times", title: "Friday prayer: new winter times", body: "<p>Since the clocks changed, Friday prayer (Jumu'ah) at the <strong>Islamic Center Regensburg</strong> (Alte Straubinger Str. 33) starts at new times. The khutbah is given in two languages:</p><p><strong>English/German:</strong> 12:30 PM<br><strong>Arabic:</strong> 1:30 PM</p><p>Just come to the prayer where you understand the khutbah best. And please pass this on to your family and friends.</p>" , screen_summary: '<p>Since the clocks changed, Friday prayer at the Islamic Center Regensburg has new times: English/German at 12:30 PM and Arabic at 1:30 PM.</p>' }
+      - { languages_code: ar, slug: "salat-aljumuah-mawaeid-alshitaa-aljadida", title: "صلاة الجمعة: مواعيد الشتاء الجديدة", body: "<p>بعد تغيير الساعة إلى التوقيت الشتوي، تغيّرت مواعيد صلاة الجمعة في <strong>المركز الإسلامي في ريغنسبورغ</strong> (Alte Straubinger Str. 33). والخطبة تُلقى بلغتين:</p><p><strong>الإنجليزية والألمانية:</strong> الساعة 12:30 ظهرًا<br><strong>العربية:</strong> الساعة 1:30 ظهرًا</p><p>تعالَ إلى الصلاة التي تفهم خطبتها أكثر، ولا تنسَ أن تخبر أهلك وأصدقاءك.</p>" , screen_summary: '<p>بعد تغيير الساعة، تغيّرت مواعيد صلاة الجمعة في المركز الإسلامي في ريغنسبورغ: الإنجليزية والألمانية الساعة 12:30، والعربية الساعة 13:30.</p>' }
