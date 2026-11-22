@@ -4,12 +4,12 @@ items:
     starts_at: "2026-11-27T18:00:00+01:00"
     ends_at: "2026-11-27T21:00:00+01:00"
     translations:
-      - { languages_code: de, title: "Gemeinschaftsessen", description: "<p>Gemeinsames Abendessen für alle Familien der Gemeinde.</p>", location: "Gemeindesaal" }
-      - { languages_code: en, title: "Community dinner", description: "<p>Shared dinner for all families of the community.</p>", location: "Community hall" }
-      - { languages_code: ar, title: "عشاء جماعي", description: "<p>عشاء مشترك لجميع عائلات الجالية.</p>", location: "قاعة الجالية" }
+      - { languages_code: de, slug: "gemeinschaftsessen", title: "Gemeinschaftsessen", description: "<p>Gemeinsames Abendessen für alle Familien der Gemeinde.</p>", location: "Gemeindesaal" , screen_summary: '<p>Gemeinsames Abendessen für alle Familien der Gemeinde.</p>' }
+      - { languages_code: en, slug: "community-dinner", title: "Community dinner", description: "<p>Shared dinner for all families of the community.</p>", location: "Community hall" , screen_summary: '<p>Shared dinner for all families of the community.</p>' }
+      - { languages_code: ar, slug: "eashaa-jamaei", title: "عشاء جماعي", description: "<p>عشاء مشترك لجميع عائلات الجالية.</p>", location: "قاعة الجالية" , screen_summary: '<p>عشاء مشترك لجميع عائلات الجالية.</p>' }
   - status: published
     starts_at: "2026-12-05T14:00:00+01:00"
     translations:
-      - { languages_code: de, title: "Tag der offenen Moschee", description: "<p>Führungen, Informationen und Begegnung bei Tee und Gebäck.</p>", location: "Hauptgebäude" }
-      - { languages_code: en, title: "Open mosque day", description: "<p>Tours, information, and conversation over tea and pastries.</p>", location: "Main building" }
-      - { languages_code: ar, title: "يوم المسجد المفتوح", description: "<p>جولات ومعلومات ولقاءات مع الشاي والحلويات.</p>", location: "المبنى الرئيسي" }
+      - { languages_code: de, slug: "tag-der-offenen-moschee", title: "Tag der offenen Moschee", description: "<p>Führungen, Informationen und Begegnung bei Tee und Gebäck.</p>", location: "Hauptgebäude" , screen_summary: '<p>Führungen, Informationen und Begegnung bei Tee und Gebäck.</p>' }
+      - { languages_code: en, slug: "open-mosque-day", title: "Open mosque day", description: "<p>Tours, information, and conversation over tea and pastries.</p>", location: "Main building" , screen_summary: '<p>Tours, information, and conversation over tea and pastries.</p>' }
+      - { languages_code: ar, slug: "yawm-almasjid-almaftuh", title: "يوم المسجد المفتوح", description: "<p>جولات ومعلومات ولقاءات مع الشاي والحلويات.</p>", location: "المبنى الرئيسي" , screen_summary: '<p>جولات ومعلومات ولقاءات مع الشاي والحلويات.</p>' }

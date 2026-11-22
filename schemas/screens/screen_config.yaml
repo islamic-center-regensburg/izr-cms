@@ -40,7 +40,41 @@ fields:
       validation:
         languages:
           _nempty: true
-  - field: default_language
+  - field: mode
+    type: string
+    schema:
+      is_nullable: false
+      default_value: automatic
+    meta:
+      interface: select-dropdown
+      required: true
+      options:
+        choices:
+          - { text: Automatic, value: automatic }
+          - { text: Manual, value: manual }
+      validation:
+        mode:
+          _in: [automatic, manual]
+  - field: manual_section
+    type: integer
+    schema:
+      is_nullable: true
+    meta:
+      interface: select-dropdown-m2o
+      special: [m2o]
+      conditions:
+        - rule:
+            mode:
+              _neq: manual
+          hidden: true
+        - rule:
+            mode:
+              _eq: manual
+          hidden: false
+          required: true
+      required: false
+      note: Section shown in manual mode, regardless of its automatic visibility settings.
+  - field: manual_language
     type: string
     schema:
       is_nullable: false
@@ -53,37 +87,14 @@ fields:
           - { text: German, value: de }
           - { text: English, value: en }
           - { text: Arabic, value: ar }
+      conditions:
+        - rule:
+            mode:
+              _neq: manual
+          hidden: true
       validation:
-        default_language:
+        manual_language:
           _in: [de, en, ar]
-  - field: language_rotation_seconds
-    type: integer
-    schema:
-      is_nullable: false
-      default_value: 15
-    meta:
-      interface: input
-      required: true
-      note: Seconds between language changes; ignored when only one language is selected.
-      validation:
-        language_rotation_seconds:
-          _gte: 1
-  - field: theme
-    type: string
-    schema:
-      is_nullable: false
-      default_value: dark
-    meta:
-      interface: select-dropdown
-      required: true
-      options:
-        choices:
-          - { text: Light, value: light }
-          - { text: Dark, value: dark }
-          - { text: Automatic, value: auto }
-      validation:
-        theme:
-          _in: [light, dark, auto]
   - field: orientation
     type: string
     schema:
@@ -118,3 +129,12 @@ fields:
     meta:
       interface: boolean
       special: [cast-boolean]
+relations:
+  - field: manual_section
+    related_collection: screen_sections
+    schema:
+      on_delete: SET NULL
+    meta:
+      one_field: null
+      many_field: manual_section
+      one_collection: screen_sections
