@@ -78,10 +78,22 @@ export async function seedExampleData(definitions, request, token) {
     const endpoint = `/items/${collection}`;
 
     if (definition.meta.singleton === true) {
-      const existing = await request(`${endpoint}?${new URLSearchParams({ fields: primary })}`, { token });
+      const existing = await request(`${endpoint}?${new URLSearchParams({ fields: '*' })}`, { token });
       if (existing.data?.[primary] == null) {
         await request(endpoint, { method: 'PATCH', body: items[0], token });
         console.log(`Seeded singleton ${collection}.`);
+      } else if (collection === 'screen_config') {
+        const defaults = {};
+        for (const field of ['mode', 'manual_section', 'manual_language']) {
+          if (existing.data[field] === undefined
+            || (field !== 'manual_section' && existing.data[field] === null)) {
+            defaults[field] = items[0][field];
+          }
+        }
+        if (Object.keys(defaults).length > 0) {
+          await request(`${endpoint}/${existing.data[primary]}`, { method: 'PATCH', body: defaults, token });
+          console.log(`Added missing screen_config defaults: ${Object.keys(defaults).join(', ')}.`);
+        }
       }
       continue;
     }

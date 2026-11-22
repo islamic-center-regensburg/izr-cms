@@ -26,6 +26,11 @@ services:
       SECRET: ${SECRET:?Set SECRET in your environment or .env file}
       ADMIN_EMAIL: ${ADMIN_EMAIL:?Set ADMIN_EMAIL in your environment or .env file}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Set ADMIN_PASSWORD in your environment or .env file}
+      # Static token for the default admin user, assigned on `bootstrap`
+      # (first start / after a volume wipe). Keeping this fixed means
+      # frontends' DIRECTUS_READ_TOKEN never has to be regenerated after
+      # `make reseed` — see README.md.
+      ADMIN_TOKEN: ${ADMIN_TOKEN:?Set ADMIN_TOKEN in your environment or .env file}
       PUBLIC_URL: ${PUBLIC_URL:-http://localhost:8055}
       DB_CLIENT: pg
       DB_HOST: database

@@ -1,0 +1,67 @@
+folder:
+  id: 8fa6098b-fd71-45a6-a092-19d6b3f53c31
+  name: IZR approved website assets
+policies:
+  - id: 0f184c48-3ce0-4b6a-9b5b-1e1dc908a301
+    name: IZR screen read-only
+    user: { id: fd54cc51-521a-4d0c-b6f7-47949aa53bfe, first_name: IZR Screen, last_name: API Service }
+    permissions:
+      - { collection: screen_config, fields: ['*'] }
+      - { collection: screen_sections, fields: ['*'] }
+      - { collection: prayer_times, fields: ['*'] }
+      - { collection: iqama_times, fields: ['*'] }
+      - { collection: languages, fields: ['*'] }
+      - collection: news
+        fields: ['*']
+        permissions: &screen_news
+          status: { _eq: published }
+          _and:
+            - _or: [{ published_at: { _null: true } }, { published_at: { _lte: $NOW } }]
+            - _or: [{ expires_at: { _null: true } }, { expires_at: { _gte: $NOW } }]
+      - { collection: news_translations, fields: ['*'], permissions: { news_id: *screen_news } }
+      - collection: events
+        fields: ['*']
+        permissions: &screen_events
+          status: { _eq: published }
+          starts_at: { _gte: $NOW }
+      - { collection: events_translations, fields: ['*'], permissions: { events_id: *screen_events } }
+      - collection: campaigns
+        fields: ['*']
+        permissions: &screen_campaigns
+          status: { _eq: active }
+          _and:
+            - _or: [{ starts_at: { _null: true } }, { starts_at: { _lte: $NOW } }]
+            - _or: [{ ends_at: { _null: true } }, { ends_at: { _gte: $NOW } }]
+      - { collection: campaigns_translations, fields: ['*'], permissions: { campaigns_id: *screen_campaigns } }
+      - collection: donations
+        fields: [campaign, amount, currency, donated_at, method, status]
+        permissions: { status: { _in: [confirmed, pending] }, campaign: *screen_campaigns }
+  - id: 918cff57-335b-40ae-a033-6551876d379b
+    name: IZR website read-only
+    user: { id: 9cfece03-1c78-48b6-af2c-5567759de7cc, first_name: IZR Website, last_name: API Service }
+    permissions:
+      - { collection: screen_config, fields: ['*'] }
+      - { collection: screen_sections, fields: ['*'] }
+      - { collection: prayer_times, fields: ['*'] }
+      - { collection: iqama_times, fields: ['*'] }
+      - { collection: languages, fields: ['*'] }
+      - collection: news
+        fields: ['*']
+        permissions: &website_news
+          status: { _eq: published }
+          _or: [{ published_at: { _null: true } }, { published_at: { _lte: $NOW } }]
+      - { collection: news_translations, fields: ['*'], permissions: { news_id: *website_news } }
+      - collection: events
+        fields: ['*']
+        permissions: &website_events { status: { _eq: published } }
+      - { collection: events_translations, fields: ['*'], permissions: { events_id: *website_events } }
+      - collection: campaigns
+        fields: ['*']
+        permissions: &website_campaigns { status: { _in: [active, completed] } }
+      - { collection: campaigns_translations, fields: ['*'], permissions: { campaigns_id: *website_campaigns } }
+      - collection: donations
+        fields: [id, campaign, amount, currency, donated_at, method, status]
+        permissions: { status: { _in: [confirmed, pending] }, campaign: *website_campaigns }
+      - collection: directus_files
+        fields: [id, filename_download, type]
+        permissions: { folder: { _eq: 8fa6098b-fd71-45a6-a092-19d6b3f53c31 } }

@@ -12,6 +12,18 @@ fields:
     meta:
       interface: datetime
       required: true
+  - field: hijri
+    type: string
+    schema:
+      is_nullable: false
+      max_length: 10
+    meta:
+      interface: input
+      required: true
+      note: "Hijri calendar date for this entry, as YYYY-MM-DD (hijri year-month-day)."
+      validation:
+        hijri:
+          _regex: "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
   - field: fajr
     type: time
     schema:

@@ -1,18 +1,26 @@
 collection: campaigns
 items:
   - status: active
+    target_amount: 1200000
+    currency: EUR
+    starts_at: "2026-10-23T00:00:00+02:00"
+    translations:
+      - { languages_code: de, slug: "som-save-our-mosque", name: "SOM – Save Our Mosque", description: "<p>Mit dieser Kampagne möchte das Islamische Zentrum Regensburg (IZR) das gesamte Grundstück der Rahman-Moschee kaufen und den Standort dauerhaft sichern. Kaufsumme: 1.200.000 €, Zeitrahmen: 12 Monate.</p>" , screen_summary: '<p>Das IZR möchte das gesamte Grundstück der Rahman-Moschee kaufen und den Standort dauerhaft sichern. Kaufsumme: 1.200.000 €, Zeitrahmen: 12 Monate.</p>' }
+      - { languages_code: en, slug: "som-save-our-mosque", name: "SOM – Save Our Mosque", description: "<p>This campaign by the Islamic Center of Regensburg (IZR) aims to purchase the entire Rahman Mosque property and secure the mosque's location permanently. Amount needed: €1,200,000, target timeframe: 12 months.</p>" , screen_summary: '<p>The IZR aims to purchase the entire Rahman Mosque property and secure the mosque’s location permanently. Amount needed: €1,200,000; target timeframe: 12 months.</p>' }
+      - { languages_code: ar, slug: "som-save-our-mosque-ar", name: "SOM – Save Our Mosque | نحافظ على مسجدنا", description: "<p>أطلق المركز الإسلامي في ريغنسبورغ (IZR) هذه الحملة لشراء كامل أرض مسجد الرحمن وتأمين مقر المسجد بشكل دائم. المبلغ المطلوب: 1,200,000 يورو، المدة المستهدفة: 12 شهرًا.</p>" , screen_summary: '<p>يهدف المركز الإسلامي في ريغنسبورغ إلى شراء كامل أرض مسجد الرحمن وتأمين مقر المسجد بشكل دائم. المبلغ المطلوب: 1,200,000 يورو، والمدة المستهدفة: 12 شهراً.</p>' }
+  - status: active
     target_amount: 50000
     currency: EUR
     starts_at: "2026-10-01T00:00:00+02:00"
     ends_at: "2027-06-30T23:59:59+02:00"
     translations:
-      - { languages_code: de, name: "Renovierung des Gebetsraums", description: "<p>Helfen Sie uns, den Gebetsraum zu renovieren: neuer Teppich, Beleuchtung und Belüftung.</p>" }
-      - { languages_code: en, name: "Prayer hall renovation", description: "<p>Help us renovate the prayer hall: new carpet, lighting, and ventilation.</p>" }
-      - { languages_code: ar, name: "تجديد قاعة الصلاة", description: "<p>ساعدونا في تجديد قاعة الصلاة: سجاد جديد وإضاءة وتهوية.</p>" }
+      - { languages_code: de, slug: "renovierung-des-gebetsraums", name: "Renovierung des Gebetsraums", description: "<p>Helfen Sie uns, den Gebetsraum zu renovieren: neuer Teppich, Beleuchtung und Belüftung.</p>" , screen_summary: '<p>Helfen Sie bei der Renovierung des Gebetsraums mit neuem Teppich, Beleuchtung und Belüftung.</p>' }
+      - { languages_code: en, slug: "prayer-hall-renovation", name: "Prayer hall renovation", description: "<p>Help us renovate the prayer hall: new carpet, lighting, and ventilation.</p>" , screen_summary: '<p>Help renovate the prayer hall with new carpet, lighting, and ventilation.</p>' }
+      - { languages_code: ar, slug: "tajdid-qaeat-alsalat", name: "تجديد قاعة الصلاة", description: "<p>ساعدونا في تجديد قاعة الصلاة: سجاد جديد وإضاءة وتهوية.</p>" , screen_summary: '<p>ساعدوا في تجديد قاعة الصلاة بسجاد جديد وإضاءة وتهوية.</p>' }
   - status: active
     currency: EUR
     starts_at: "2026-11-01T00:00:00+01:00"
     translations:
-      - { languages_code: de, name: "Winterhilfe", description: "<p>Spenden für warme Mahlzeiten und Kleidung für Bedürftige in diesem Winter.</p>" }
-      - { languages_code: en, name: "Winter aid", description: "<p>Donations for warm meals and clothing for those in need this winter.</p>" }
-      - { languages_code: ar, name: "المساعدات الشتوية", description: "<p>تبرعات لوجبات دافئة وملابس للمحتاجين في هذا الشتاء.</p>" }
+      - { languages_code: de, slug: "winterhilfe", name: "Winterhilfe", description: "<p>Spenden für warme Mahlzeiten und Kleidung für Bedürftige in diesem Winter.</p>" , screen_summary: '<p>Spenden für warme Mahlzeiten und Kleidung für Bedürftige in diesem Winter.</p>' }
+      - { languages_code: en, slug: "winter-aid", name: "Winter aid", description: "<p>Donations for warm meals and clothing for those in need this winter.</p>" , screen_summary: '<p>Donations for warm meals and clothing for those in need this winter.</p>' }
+      - { languages_code: ar, slug: "almusaeadat-alshitwia", name: "المساعدات الشتوية", description: "<p>تبرعات لوجبات دافئة وملابس للمحتاجين في هذا الشتاء.</p>" , screen_summary: '<p>تبرعات لوجبات دافئة وملابس للمحتاجين في هذا الشتاء.</p>' }
