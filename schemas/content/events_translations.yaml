@@ -42,13 +42,13 @@ fields:
   - field: slug
     type: string
     schema:
-      is_nullable: false
+      is_nullable: true
     meta:
       interface: input
       required: true
       hidden: false
       readonly: false
-      note: "URL path segment for this language; lowercase letters, digits, and hyphens only. Must be unique per language; not enforced by the schema."
+      note: "Required URL path segment for this language; lowercase letters, digits, and hyphens only. Must be unique per language; not enforced by the schema."
       validation:
         slug:
           _regex: "^[a-z0-9]+(-[a-z0-9]+)*$"

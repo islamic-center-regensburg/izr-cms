@@ -15,7 +15,7 @@ fields:
   - field: hijri
     type: string
     schema:
-      is_nullable: false
+      is_nullable: true
       max_length: 10
     meta:
       interface: input
