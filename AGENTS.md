@@ -3,6 +3,23 @@
 This repository configures a Docker-based Directus 11.17.4 CMS backed by
 PostgreSQL. See `README.md` for the data model, deployment, and access policies.
 
+## Git workflow
+
+- **Never commit directly to `dev` or `main`.** This applies to every change,
+  however small, and to agents as well as people.
+- Always create a new branch from an up-to-date `dev` (for example
+  `feat/<topic>` or `fix/<topic>`) and do the work and the commits there.
+- Make the commits on that branch with the `commit-changes` skill
+  (`.agents/skills/tooling/commit-changes/`), which groups changes by topic and
+  writes the messages.
+- If the current branch is `dev` or `main` when a commit is about to be made,
+  stop, create the branch first, then commit.
+- Changes reach `dev` through a pull request (CI runs the smoke test on PRs to
+  `dev` and `main`), and `main` only from `dev`.
+- `.agents/skills` is the `belskills` git submodule: commit skill changes inside
+  that repository first, then commit the updated submodule pointer here, on a
+  branch as above.
+
 ## Layout
 
 - `schemas/<domain>/`: one YAML collection definition per file, including
