@@ -22,7 +22,7 @@ services:
       database:
         condition: service_healthy
     environment:
-      CMS_ENV: ${CMS_ENV:-prod}
+      CMS_ENV: ${CMS_ENV:-dev}
       SECRET: ${SECRET:?Set SECRET in your environment or .env file}
       ADMIN_EMAIL: ${ADMIN_EMAIL:?Set ADMIN_EMAIL in your environment or .env file}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Set ADMIN_PASSWORD in your environment or .env file}

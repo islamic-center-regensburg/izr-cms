@@ -19,7 +19,7 @@ user.
 Use `make reseed` to wipe these volumes (database, uploads, and schema state)
 and start fresh, so schemas are reapplied and example seed data is loaded
 again from scratch. This destroys all existing data, including anything added
-outside the seeds, and only seeds example data when `CMS_ENV=dev` is set.
+outside the seeds. Do not use this destructive command on production data.
 `ADMIN_TOKEN` is assigned to the default admin user on bootstrap (Directus's
 own mechanism). Service users are recreated after reseeding, but their manually
 generated tokens are lost unless the operator separately provisions them.
@@ -243,23 +243,35 @@ permissions or implement payment processing or display logic.
 
 ## Seed data
 
-The `seeds` directory contains example data for development, organized by
-namespace with one YAML file per collection (`collection` plus `items`). It is
-loaded by `scripts/seed-data.js` after schema synchronization, and only when
-`CMS_ENV=dev` is set (see `.env`; the Compose default is `prod`, which skips
-seeding entirely).
+The `seeds` directory is organized by namespace with one YAML file per
+collection (`collection` plus `items`). After synchronizing **all** schemas,
+`scripts/seed-data.js` selects seeds using `CMS_ENV`:
+
+- `dev` (the default when absent, also in Compose and `.env.example`): all
+  existing development samples, unchanged.
+- `prod`: **only `languages`, `screen_config`, `screen_sections`, and
+  `iqama_times`**. Languages come from inline schema items; the other three
+  use existing seed files. No new iqama values are generated.
+- Any other value fails startup explicitly.
+
+Set `CMS_ENV=prod` for production. Fabricated/unverified `prayer_times` examples
+and sample news, events, campaigns, and donations are excluded. Selection does
+not delete existing demo rows or clear any collection; previously stored
+data remains. Application policies and technical users are reconciled
+independently of seed selection in both environments.
 
 Each collection is seeded only when it is completely empty, so existing data
-is never modified; emptying a collection re-seeds it on the next start.
-Singletons such as `screen_config` are seeded when unsaved. The donation seeds
+is not overwritten; emptying an eligible collection re-seeds it on the next
+start. Singletons such as `screen_config` are seeded when unsaved. Development
+also retains its existing missing screen-control-default backfill; production
+leaves saved singleton values untouched. The donation seeds
 reference campaign ids 1 and 2, which assumes campaigns were seeded into a
 fresh database. Prayer times cover 2026-11-15 to 2026-11-21 as examples.
 Seed items may only use declared fields of managed collections. Rebuild the
 image after editing seeds.
 
-Seeding example data is separate from the inline `items` in schema files
-(such as the `languages` records), which are reference data created in every
-environment.
+Inline schema `items` use the same environment selection and are inserted
+only for missing stable primary keys, preserving authored language records.
 
 ## Application access policies
 

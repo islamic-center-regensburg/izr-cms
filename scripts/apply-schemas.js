@@ -2,7 +2,7 @@ import { readFile, readdir, rename, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { setTimeout as sleep } from 'node:timers/promises';
 import yaml from 'js-yaml';
-import { seedExampleData } from './seed-data.js';
+import { seedData, seedEnvironment } from './seed-data.js';
 import { applyPolicies } from './apply-policies.js';
 
 const baseUrl = 'http://127.0.0.1:8056';
@@ -276,26 +276,8 @@ function desiredSnapshot(snapshot, definitions, previous) {
   return desired;
 }
 
-async function seedItems(definitions, token) {
-  for (const definition of definitions) {
-    const primary = definition.fields.find((field) => field.schema?.is_primary_key === true).field;
-    for (const item of definition.items ?? []) {
-      const query = new URLSearchParams({
-        filter: JSON.stringify({ [primary]: { _eq: item[primary] } }),
-        fields: primary,
-        limit: '1',
-      });
-      const endpoint = `/items/${definition.collection}`;
-      const existing = await request(`${endpoint}?${query}`, { token });
-      if (existing.data.length === 0) {
-        await request(endpoint, { method: 'POST', body: item, token });
-        console.log(`Created seed item ${definition.collection}.${item[primary]}.`);
-      }
-    }
-  }
-}
-
 async function main() {
+  const environment = seedEnvironment();
   if (!process.env.ADMIN_EMAIL || !process.env.ADMIN_PASSWORD) {
     throw new Error('ADMIN_EMAIL and ADMIN_PASSWORD are required for schema synchronization');
   }
@@ -320,8 +302,7 @@ async function main() {
     console.log('Schemas are already up to date.');
   }
   await writeManagedCollections(names);
-  await seedItems(definitions, token);
-  await seedExampleData(definitions, request, token);
+  await seedData(definitions, request, token, { environment });
   await applyPolicies(request, token);
 }
 

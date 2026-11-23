@@ -4,14 +4,27 @@ import yaml from 'js-yaml';
 
 const seedsDir = '/directus/seeds';
 
+const productionCollections = new Set(['languages', 'screen_config', 'screen_sections', 'iqama_times']);
+
+export function seedEnvironment(environment = process.env.CMS_ENV ?? 'dev') {
+  if (!['dev', 'prod'].includes(environment)) {
+    throw new Error('CMS_ENV must be "dev" or "prod".');
+  }
+  return environment;
+}
+
+function shouldSeed(collection, environment) {
+  return environment === 'dev' || productionCollections.has(collection);
+}
+
 function isObject(value) {
   return value !== null && typeof value === 'object' && !Array.isArray(value);
 }
 
-async function loadSeeds(definitions) {
+async function loadSeeds(definitions, directoryRoot) {
   let namespaces;
   try {
-    namespaces = await readdir(seedsDir, { withFileTypes: true });
+    namespaces = await readdir(directoryRoot, { withFileTypes: true });
   } catch (error) {
     if (error.code === 'ENOENT') return [];
     throw error;
@@ -22,10 +35,10 @@ async function loadSeeds(definitions) {
 
   for (const namespace of namespaces.sort((a, b) => a.name.localeCompare(b.name))) {
     if (!namespace.isDirectory()) {
-      throw new Error(`Expected a namespace directory in ${seedsDir}: ${namespace.name}`);
+      throw new Error(`Expected a namespace directory in ${directoryRoot}: ${namespace.name}`);
     }
 
-    const directory = path.join(seedsDir, namespace.name);
+    const directory = path.join(directoryRoot, namespace.name);
     const files = await readdir(directory, { withFileTypes: true });
     for (const file of files.sort((a, b) => a.name.localeCompare(b.name))) {
       if (!file.isFile() || !/\.ya?ml$/i.test(file.name)) {
@@ -66,14 +79,29 @@ async function loadSeeds(definitions) {
   return seeds;
 }
 
-export async function seedExampleData(definitions, request, token) {
-  if (process.env.CMS_ENV !== 'dev') {
-    console.log('Skipping example data seeding; CMS_ENV is not "dev".');
-    return;
+export async function seedData(definitions, request, token, options = {}) {
+  const environment = seedEnvironment(options.environment);
+  const seeds = await loadSeeds(definitions, options.seedsDir ?? seedsDir);
+
+  // Schema reference items use stable keys, preserving existing authored records.
+  for (const definition of definitions.filter((item) => shouldSeed(item.collection, environment))) {
+    const primary = definition.fields.find((field) => field.schema?.is_primary_key === true).field;
+    for (const item of definition.items ?? []) {
+      const query = new URLSearchParams({
+        filter: JSON.stringify({ [primary]: { _eq: item[primary] } }),
+        fields: primary,
+        limit: '1',
+      });
+      const endpoint = `/items/${definition.collection}`;
+      const existing = await request(`${endpoint}?${query}`, { token });
+      if (existing.data.length === 0) {
+        await request(endpoint, { method: 'POST', body: item, token });
+        console.log(`Created seed item ${definition.collection}.${item[primary]}.`);
+      }
+    }
   }
 
-  const seeds = await loadSeeds(definitions);
-  for (const { collection, items, definition } of seeds) {
+  for (const { collection, items, definition } of seeds.filter((seed) => shouldSeed(seed.collection, environment))) {
     const primary = definition.fields.find((field) => field.schema?.is_primary_key === true).field;
     const endpoint = `/items/${collection}`;
 
@@ -82,7 +110,7 @@ export async function seedExampleData(definitions, request, token) {
       if (existing.data?.[primary] == null) {
         await request(endpoint, { method: 'PATCH', body: items[0], token });
         console.log(`Seeded singleton ${collection}.`);
-      } else if (collection === 'screen_config') {
+      } else if (environment === 'dev' && collection === 'screen_config') {
         const defaults = {};
         for (const field of ['mode', 'manual_section', 'manual_language']) {
           if (existing.data[field] === undefined
