@@ -2,32 +2,67 @@
 
 ## Running Directus
 
-Copy `.env.example` to `.env` and set a strong `DB_PASSWORD`, a long random
-`SECRET`, `ADMIN_EMAIL`, a strong `ADMIN_PASSWORD`, and `ADMIN_TOKEN` (any
-fixed random string). Keep the secret stable across restarts and keep `.env`
-private. If you change `DIRECTUS_PORT`, update `PUBLIC_URL` to match. The port
-is bound to localhost by default.
+`make up` creates `.env` with random credentials on first use (it never
+overwrites values), builds the image, applies pending revisions, and waits
+until the backend is healthy; then open `http://localhost:8055`. Set
+`ADMIN_EMAIL` and read `ADMIN_PASSWORD` from `.env`. Keep `.env` private. If you
+change `DIRECTUS_PORT`, update `PUBLIC_URL` to match. The port is bound to
+localhost.
 
-Run `make up`, then open `http://localhost:8055` (or your configured port).
-Use `make logs` to follow logs, `make restart` to restart services, and
-`make down` to stop them without removing their volumes. PostgreSQL data,
-Directus uploads, and schema ownership use persistent Docker volumes. Back up
-and restore these volumes together. The database credentials initialize a new
-volume only; changing them in `.env` does not update an existing PostgreSQL
-user.
+`make logs` follows the logs, `make restart` re-runs startup, `make down` stops
+the stack without removing volumes. Back up the database and uploads volumes
+together. Database credentials initialize a new volume only.
 
-Use `make reseed` to wipe these volumes (database, uploads, and schema state)
-and start fresh, so schemas are reapplied and example seed data is loaded
-again from scratch. This destroys all existing data, including anything added
-outside the seeds. Do not use this destructive command on production data.
-`ADMIN_TOKEN` is assigned to the default admin user on bootstrap (Directus's
-own mechanism). Service users are recreated after reseeding, but their manually
-generated tokens are lost unless the operator separately provisions them.
+**Rebuild the image after editing schemas, revisions, access, seeds or scripts**
+(`make up`): they are baked into it.
 
-Directus 11.17.4 includes MCP support. Enable it in the Directus admin settings
-before connecting a client to `/mcp`, and use an appropriately scoped user.
-For deployments beyond localhost, configure a public HTTPS URL and appropriate
-network access.
+`make reseed CONFIRM=yes` wipes the database and uploads volumes and re-applies
+everything from scratch. It destroys all data, including static tokens. Never run
+it against data worth keeping.
+
+### Startup
+
+On every start the entrypoint runs Directus `bootstrap`, starts a temporary
+private server and runs `scripts/sync.js`: validate all YAML, apply pending
+**revisions**, reconcile **access policies** and service users, enable the MCP
+server (only when `MCP_TOKEN` is set), and load **seeds**. Only then does the
+public server start. Any failure exits nonzero and nothing is served.
+
+### Schemas and revisions
+
+`schemas/<domain>/*.yaml` is the data model and the only place it is edited.
+A change becomes a revision:
+
+1. Edit the YAML, then `make revision m="short name"`. This starts a throwaway
+   stack, diffs the YAML against the newest revision and writes
+   `revisions/NNNN_name/` (`schema.json`, `changes.json`). Read the change list;
+   every `-` line loses data.
+2. If data has to move, add `up.sql` / `down.sql` next to it (data only, no
+   `ALTER`/`CREATE`/`DROP`).
+3. `make up` applies it. Commit the whole folder with the YAML.
+
+Never edit a revision that was applied anywhere; make a new one. Roll back with
+`make migrate-down` (newest first, with the image that contains the revision),
+then deploy the older image. `make migrate-status` shows what is applied;
+`make check` (also run in CI) fails if the YAML changed without a revision.
+Revisions are recorded in `app_meta.revisions`. All primary keys of seeded
+collections are UUIDs (`languages` uses `code`, `prayer_times` the date), so seed
+rows have stable keys. Money is stored as exact decimals in euros.
+
+### Deployment
+
+`.github/workflows/deploy.yml` runs when a pull request is merged (a push) into
+`dev` or `main` and calls the shared workflow of the superproject
+(`islamic-center-regensburg/izr`, `.github/workflows/deploy.yml`). That workflow
+posts to the deploy hook held in an organization secret: `DEPLOY_WEBHOOK_CMS_DEV`
+for `dev`, `DEPLOY_WEBHOOK_CMS_PROD` for `main`. Runs of one branch are queued,
+not cancelled.
+
+### Environment variables
+
+See `.env.example`: database and admin credentials, `SECRET`, `CMS_ENV`
+(`dev` or `prod`; set it explicitly everywhere), `SEED_PUBLISH_DEMO` (never in
+production), and one token per service user (below).
 
 ## Prayer schemas
 
@@ -243,89 +278,45 @@ permissions or implement payment processing or display logic.
 
 ## Seed data
 
-The `seeds` directory is organized by namespace with one YAML file per
-collection (`collection` plus `items`). After synchronizing **all** schemas,
-`scripts/seed-data.js` selects seeds using `CMS_ENV`:
+`seeds/` has two folders, one YAML file per collection (`collection` plus
+`items`), applied in file-name order (`01-`, `02-`, ...):
 
-- `dev` (the default when absent, also in Compose and `.env.example`): all
-  existing development samples, unchanged.
-- `prod`: **only `languages`, `screen_config`, `screen_sections`, and
-  `iqama_times`**. Languages come from inline schema items; the other three
-  use existing seed files. No new iqama values are generated.
-- Any other value fails startup explicitly.
+- `seeds/reference/`: loaded in every environment. Only `languages` (de, en, ar).
+- `seeds/examples/`: loaded only when `CMS_ENV=dev`: news, events, campaigns,
+  donations, prayer and iqama times, screen sections and the screen config.
 
-Set `CMS_ENV=prod` for production. Fabricated/unverified `prayer_times` examples
-and sample news, events, campaigns, and donations are excluded. Selection does
-not delete existing demo rows or clear any collection; previously stored
-data remains. Application policies and technical users are reconciled
-independently of seed selection in both environments.
+Every item has a stable primary key; translations are separate rows, not nested.
+Seeding creates only **missing rows** and never overwrites existing ones, so
+editing a seed does not update existing installs (use a revision's `up.sql`).
+`SEED_PUBLISH_DEMO=true` publishes example rows that are still drafts. In `prod`
+the screen config and sections are not seeded: create them in the admin.
 
-Each collection is seeded only when it is completely empty, so existing data
-is not overwritten; emptying an eligible collection re-seeds it on the next
-start. Singletons such as `screen_config` are seeded when unsaved. Development
-also retains its existing missing screen-control-default backfill; production
-leaves saved singleton values untouched. The donation seeds
-reference campaign ids 1 and 2, which assumes campaigns were seeded into a
-fresh database. Prayer times cover 2026-11-15 to 2026-11-21 as examples.
-Seed items may only use declared fields of managed collections. Rebuild the
-image after editing seeds.
+## Access policies and service users
 
-Inline schema `items` use the same environment selection and are inserted
-only for missing stable primary keys, preserving authored language records.
+`access/*.yaml` defines managed roles, policies and service users. Policies are
+matched by name and owned by the YAML: edits made in the Directus UI do not
+survive a restart. Each file names the environment variable that holds its
+user's static token (`user.token_env`); on every start the token from that
+variable is applied to the user. An unset variable skips the user, a malformed
+one (fewer than 32 letters, digits, `-`, `_`) fails startup. Tokens are never in
+the YAML, image or logs. Do not edit a managed user in the UI; restart to reset
+it.
 
-## Application access policies
+| File | User | Token variable | Access |
+| --- | --- | --- | --- |
+| `screen.yaml` | IZR Screen | `SCREEN_TOKEN` | read-only, what is on air now |
+| `website.yaml` | IZR Website | `WEBSITE_TOKEN` | read-only, published content, files in the approved folder |
+| `mcp.yaml` | IZR MCP | `MCP_TOKEN` | read content; create and update news and events as drafts only; no delete, no donations, no users or schema |
 
-`policies/apps.yaml` defines two Directus v11 policies, reconciled through the
-Directus metadata API after schema synchronization on every container start,
-including after a fresh database bootstrap. Rebuild with `make up`. They grant
-only `read`, no Directus app or administrator access, and do not change public
-permissions, existing roles, or tokens. The loader refuses conflicting IDs,
-unexpected permissions, or a policy with admin/app access rather than taking
-them over. To remove an obsolete permission from a managed policy, remove it
-manually first; the loader deliberately does not delete permissions.
+Locally `tools/init-env.mjs` writes random tokens to `.env`. In deployments
+Terraform (`izr-infra`) generates each token, stores it in Infisical, and passes
+it to the CMS and to the application that uses it (as `DIRECTUS_READ_TOKEN`
+for the screen and website).
 
-* **IZR screen read-only** (`0f184c48-3ce0-4b6a-9b5b-1e1dc908a301`):
-  12 read permissions. Includes screen settings and sections, prayer and iqama
-  times, languages, currently visible published news, upcoming published
-  events, currently active campaigns and their translations and eligible
-  donations. The screen currently has no asset proxy and no file permission.
-* **IZR website read-only** (`918cff57-335b-40ae-a033-6551876d379b`):
-  13 read permissions. Includes screen settings/sections, prayer and iqama
-  times, languages, published news (including expired history but not future
-  publications), published events including past details, active and completed
-  campaigns, their translations, eligible donations, and approved website files.
-  Draft and archived campaigns are intentionally inaccessible by slug.
+The website policy lets the server read files only in the **IZR approved website
+assets** folder (`8fa6098b-fd71-45a6-a092-19d6b3f53c31`). Put only files safe for
+public distribution there. The policy permits individual donation rows (not just
+aggregates) to the server credential.
 
-Translation permissions also filter by their parent content. Donations are
-restricted to confirmed/pending rows belonging to accessible campaigns and
-the fields `campaign`, `amount`, `currency`, `donated_at`, `method`,
-and `status` (plus `id` for the website); refunded, general and inaccessible-campaign donations are
-excluded. These permissions permit individual anonymous donation rows to the
-server credential, not just aggregates. The existing website RPCs return rows
-to callers; do not treat the policy as an aggregate-only boundary.
-
-The website's `/api/assets/:id` proxy can retrieve files only in the dedicated
-**IZR approved website assets** folder
-(`8fa6098b-fd71-45a6-a092-19d6b3f53c31`). This is an operator-curated
-alternative to reverse-reference filtering: it does **not** automatically
-verify that files are referenced by currently visible content. Put only files
-safe for public distribution in this folder, and promptly remove files when
-their content becomes private. Files outside it remain inaccessible to this
-policy; existing thumbnails must be reviewed and moved there before they work
-with the website policy. Folder membership grants access even when a file is
-unreferenced or its content is no longer visible.
-
-The loader creates active, role-less service users **IZR Screen API Service**
-(`fd54cc51-521a-4d0c-b6f7-47949aa53bfe`) and **IZR Website API Service**
-(`9cfece03-1c78-48b6-af2c-5567759de7cc`) with no email, each directly linked
-only to its corresponding policy. It refuses mismatched users or extra access
-links rather than taking them over. It neither generates nor reads or changes
-their credentials; existing tokens survive ordinary restarts.
-
-An administrator should manually generate a static token for each service user
-in Directus and store it only in the corresponding application's server-side
-`DIRECTUS_READ_TOKEN`. Never expose it to browsers or commit it. Permissions
-are additive: review public access and avoid additional roles or policies that
-could grant broader access. Verify permissions and asset access before switching
-production traffic. A destructive reseed removes these manual tokens; separately
-provision them securely or generate new ones and update the applications.
+The MCP server is at `/mcp` and needs `Authorization: Bearer <MCP_TOKEN>`. It is
+enabled by startup when `MCP_TOKEN` is set, with deletes disallowed.
