@@ -5,16 +5,17 @@ meta:
   note: Anonymous donations; no donor identity or contact information.
 fields:
   - field: id
-    type: integer
+    type: uuid
     schema:
       is_primary_key: true
-      has_auto_increment: true
+      is_nullable: false
     meta:
       interface: input
+      special: [uuid]
       hidden: true
       readonly: true
   - field: campaign
-    type: integer
+    type: uuid
     meta:
       interface: select-dropdown-m2o
       special: [m2o]

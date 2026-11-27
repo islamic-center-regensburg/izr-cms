@@ -43,7 +43,3 @@ fields:
       validation:
         direction:
           _in: [ltr, rtl]
-items:
-  - { code: de, name: German, direction: ltr }
-  - { code: en, name: English, direction: ltr }
-  - { code: ar, name: Arabic, direction: rtl }

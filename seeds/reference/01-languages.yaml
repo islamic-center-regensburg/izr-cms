@@ -1,0 +1,6 @@
+# Reference data: loaded in every environment, only when the key is missing.
+collection: languages
+items:
+  - { code: de, name: German, direction: ltr }
+  - { code: en, name: English, direction: ltr }
+  - { code: ar, name: Arabic, direction: rtl }
