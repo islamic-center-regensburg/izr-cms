@@ -1,0 +1,7 @@
+# Example data: loaded only when CMS_ENV=dev. Keys are derived from the first slug, so reruns are idempotent.
+collection: news
+items:
+  - {id: b3e48c78-c5c2-5789-a7cb-2280f0269f30, status: published, published_at: "2026-11-10T09:00:00+01:00"}
+  - {id: 4ea19907-74ac-5083-a4ae-7f75b1cadf12, status: published, published_at: "2026-11-12T18:00:00+01:00", expires_at: "2026-12-01T00:00:00+01:00"}
+  - {id: 8d1ba1f2-685b-5c3e-a964-0dcc1bab372b, status: published, published_at: "2026-10-26T13:01:21+01:00"}
+  - {id: dd6cda44-0292-507e-af42-5b31ff08fe33, status: published, published_at: "2026-10-26T11:44:17+01:00"}

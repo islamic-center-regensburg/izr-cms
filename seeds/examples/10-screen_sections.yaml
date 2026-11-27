@@ -1,0 +1,7 @@
+# Example data: loaded only when CMS_ENV=dev. Keys are derived from the section type, so reruns are idempotent.
+collection: screen_sections
+items:
+  - {id: e9413c3f-815e-5a1f-a352-6098497587bd, name: Prayer times, type: prayer_times, enabled: true, sort: 1, duration_seconds: 30, max_items: 1}
+  - {id: 901242bf-1ef8-5546-ae61-607631d32203, name: News, type: news, enabled: true, sort: 2, duration_seconds: 15, max_items: 5}
+  - {id: d2b850fe-1455-5722-adc5-520fff2a639b, name: Upcoming events, type: events, enabled: true, sort: 3, duration_seconds: 15, max_items: 3}
+  - {id: 283c6dd1-bce8-526b-a0b5-ba9eb88b1a89, name: Campaign progress, type: campaign_progress, enabled: true, sort: 4, duration_seconds: 15, max_items: 2}
