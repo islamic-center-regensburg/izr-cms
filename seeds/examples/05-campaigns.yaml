@@ -1,0 +1,6 @@
+# Example data: loaded only when CMS_ENV=dev. Keys are derived from the first slug, so reruns are idempotent.
+collection: campaigns
+items:
+  - {id: d11958bb-5d1d-5388-acae-dcd2145aef42, status: active, target_amount: 1200000, currency: EUR, starts_at: "2026-10-23T00:00:00+02:00"}
+  - {id: 4c580a0e-1e22-52f0-aeb7-715624be4bf0, status: active, target_amount: 50000, currency: EUR, starts_at: "2026-10-01T00:00:00+02:00", ends_at: "2027-06-30T23:59:59+02:00"}
+  - {id: c9ec52a9-d4e9-56fb-a5b4-17910ad881d2, status: active, currency: EUR, starts_at: "2026-11-01T00:00:00+01:00"}

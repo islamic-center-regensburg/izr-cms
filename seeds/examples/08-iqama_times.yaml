@@ -1,0 +1,38 @@
+# Example data: loaded only when CMS_ENV=dev. Keys are derived from prayer and weekday, so reruns are idempotent.
+collection: iqama_times
+items:
+  - {id: 7f4333c8-4571-5734-a1f1-4bc1377c03cd, prayer: fajr, weekday: monday, type: offset, offset_minutes: 20}
+  - {id: bb426585-c198-5ccd-a200-c67442265326, prayer: fajr, weekday: tuesday, type: offset, offset_minutes: 20}
+  - {id: 3f29c5ef-c78e-5315-a7ea-b3447bcb6cfd, prayer: fajr, weekday: wednesday, type: offset, offset_minutes: 20}
+  - {id: 787d99f3-d51f-5411-a758-892136efe714, prayer: fajr, weekday: thursday, type: offset, offset_minutes: 20}
+  - {id: f16a2af7-dfb8-5a93-ab41-83d1691bc2be, prayer: fajr, weekday: friday, type: offset, offset_minutes: 20}
+  - {id: 6b58809b-3eae-52da-acea-492de77156fd, prayer: fajr, weekday: saturday, type: offset, offset_minutes: 20}
+  - {id: f3117f11-a204-5490-afd4-6d123094da9e, prayer: fajr, weekday: sunday, type: offset, offset_minutes: 20}
+  - {id: d07cec3a-d65a-5c71-a455-873eda2df684, prayer: dhuhr, weekday: monday, type: offset, offset_minutes: 10}
+  - {id: 840003d6-b927-5da7-a99a-7b03eb42ebb8, prayer: dhuhr, weekday: tuesday, type: offset, offset_minutes: 10}
+  - {id: 2970533f-dae2-5e7b-aac0-65ce57cb0d7f, prayer: dhuhr, weekday: wednesday, type: offset, offset_minutes: 10}
+  - {id: 1592cf50-afd3-5a44-a418-86dabad589b3, prayer: dhuhr, weekday: thursday, type: offset, offset_minutes: 10}
+  - {id: dc69cb1d-2284-5a74-a813-ee8c4698481a, prayer: dhuhr, weekday: saturday, type: offset, offset_minutes: 10}
+  - {id: b6e4a2e3-960f-5c0f-af97-7e2a3bb50399, prayer: dhuhr, weekday: sunday, type: offset, offset_minutes: 10}
+  - {id: 787e12af-02cc-5820-a583-7a907fc2820e, prayer: jumuah, weekday: friday, type: fixed, fixed_time: "13:00:00"}
+  - {id: fad6430f-8c27-5665-a494-d477d6a11615, prayer: asr, weekday: monday, type: offset, offset_minutes: 10}
+  - {id: 2b83e2b6-7050-592f-a044-25516932eaf1, prayer: asr, weekday: tuesday, type: offset, offset_minutes: 10}
+  - {id: 328f467e-f255-51eb-a590-c24922ee609f, prayer: asr, weekday: wednesday, type: offset, offset_minutes: 10}
+  - {id: eba95413-a43e-58b3-a082-23a2e3a25a6a, prayer: asr, weekday: thursday, type: offset, offset_minutes: 10}
+  - {id: 549a05fe-9f0f-508d-a4a1-7a2be151b42f, prayer: asr, weekday: friday, type: offset, offset_minutes: 10}
+  - {id: 9d27cfae-82ff-5bc0-a6c3-9be6979ecc57, prayer: asr, weekday: saturday, type: offset, offset_minutes: 10}
+  - {id: 73fff929-c184-5070-a230-2bb885a6b138, prayer: asr, weekday: sunday, type: offset, offset_minutes: 10}
+  - {id: ca73b0ac-7349-5e1e-a198-304ea2f7336c, prayer: maghrib, weekday: monday, type: offset, offset_minutes: 5}
+  - {id: 8af0f08c-6aab-53fe-a122-16f2076f3cd8, prayer: maghrib, weekday: tuesday, type: offset, offset_minutes: 5}
+  - {id: b8c38b36-9b11-526f-a24d-f86af946113e, prayer: maghrib, weekday: wednesday, type: offset, offset_minutes: 5}
+  - {id: 4729fde8-aa57-5d06-ae56-40c0daab2e3f, prayer: maghrib, weekday: thursday, type: offset, offset_minutes: 5}
+  - {id: 71e755c9-25fa-581a-a331-ffef10c098c9, prayer: maghrib, weekday: friday, type: offset, offset_minutes: 5}
+  - {id: 097a0991-ea43-563f-a06f-6e7b21921336, prayer: maghrib, weekday: saturday, type: offset, offset_minutes: 5}
+  - {id: 0c4c5132-b17b-5b68-a82e-e25266bd5f11, prayer: maghrib, weekday: sunday, type: offset, offset_minutes: 5}
+  - {id: 5a6821f4-68e2-5f87-ac78-317e295a8e84, prayer: isha, weekday: monday, type: offset, offset_minutes: 10}
+  - {id: 3f413216-8667-54ae-a859-8d7caa93848a, prayer: isha, weekday: tuesday, type: offset, offset_minutes: 10}
+  - {id: 92e186d7-5481-5104-a90a-ac88d3f77ca4, prayer: isha, weekday: wednesday, type: offset, offset_minutes: 10}
+  - {id: 66da841f-e0a2-53e5-a645-e6a6fb83c0f0, prayer: isha, weekday: thursday, type: offset, offset_minutes: 10}
+  - {id: bb15e652-aa3b-51db-ab5a-27845bd5f6a0, prayer: isha, weekday: friday, type: offset, offset_minutes: 10}
+  - {id: 7cf20720-c741-5a7d-ae84-e142c9911361, prayer: isha, weekday: saturday, type: offset, offset_minutes: 10}
+  - {id: bc1feb68-0e28-5a4a-a6e2-e20d4100877c, prayer: isha, weekday: sunday, type: offset, offset_minutes: 10}
