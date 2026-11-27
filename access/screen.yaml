@@ -48,5 +48,5 @@ permissions:
   - { collection: campaigns_translations, action: read, fields: ['*'], permissions: { campaigns_id: *screen_campaigns } }
   - collection: donations
     action: read
-    fields: [campaign, amount, currency, donated_at, method, status]
+    fields: [id, campaign, amount, currency, donated_at, method, status]
     permissions: { status: { _in: [confirmed, pending] }, campaign: *screen_campaigns }
