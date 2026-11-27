@@ -1,0 +1,51 @@
+# The public website's server: read-only, published content only.
+folder:
+  id: 8fa6098b-fd71-45a6-a092-19d6b3f53c31
+  name: IZR approved website assets
+role:
+  name: IZR Website
+  icon: public
+  description: Reads the content shown on the website.
+policy:
+  name: IZR website read-only
+  icon: lock
+  admin_access: false
+  app_access: false
+  description: Read-only access to published website content.
+user:
+  email: website@service.example.com
+  first_name: IZR Website
+  last_name: API Service
+  # Terraform generates this token and passes it to the CMS and to the website app.
+  token_env: WEBSITE_TOKEN
+permissions:
+  - { collection: screen_config, action: read, fields: ['*'] }
+  - { collection: screen_sections, action: read, fields: ['*'] }
+  - { collection: prayer_times, action: read, fields: ['*'] }
+  - { collection: iqama_times, action: read, fields: ['*'] }
+  - { collection: languages, action: read, fields: ['*'] }
+  - collection: news
+    action: read
+    fields: ['*']
+    permissions: &website_news
+      status: { _eq: published }
+      _or: [{ published_at: { _null: true } }, { published_at: { _lte: $NOW } }]
+  - { collection: news_translations, action: read, fields: ['*'], permissions: { news_id: *website_news } }
+  - collection: events
+    action: read
+    fields: ['*']
+    permissions: &website_events { status: { _eq: published } }
+  - { collection: events_translations, action: read, fields: ['*'], permissions: { events_id: *website_events } }
+  - collection: campaigns
+    action: read
+    fields: ['*']
+    permissions: &website_campaigns { status: { _in: [active, completed] } }
+  - { collection: campaigns_translations, action: read, fields: ['*'], permissions: { campaigns_id: *website_campaigns } }
+  - collection: donations
+    action: read
+    fields: [id, campaign, amount, currency, donated_at, method, status]
+    permissions: { status: { _in: [confirmed, pending] }, campaign: *website_campaigns }
+  - collection: directus_files
+    action: read
+    fields: [id, filename_download, type]
+    permissions: { folder: { _eq: 8fa6098b-fd71-45a6-a092-19d6b3f53c31 } }
