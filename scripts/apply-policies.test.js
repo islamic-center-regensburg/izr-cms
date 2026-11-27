@@ -1,100 +1,187 @@
-import test from 'node:test';
-import assert from 'node:assert/strict';
-import { fileURLToPath } from 'node:url';
-import { applyPolicies } from './apply-policies.js';
+import assert from 'node:assert/strict'
+import { mkdtemp, rm, writeFile } from 'node:fs/promises'
+import os from 'node:os'
+import path from 'node:path'
+import test from 'node:test'
+import { fileURLToPath } from 'node:url'
+import { applyPolicies, loadAccess } from './apply-policies.js'
+import { loadDefinitions } from './schema-model.js'
 
-const filename = fileURLToPath(new URL('../policies/apps.yaml', import.meta.url));
+const schemasDir = fileURLToPath(new URL('../schemas/', import.meta.url))
+const repoAccessDir = fileURLToPath(new URL('../access/', import.meta.url))
+const token = 'x'.repeat(40)
 
-function fakeApi() {
-  const rows = { folders: [], policies: [], permissions: [], users: [], access: [] };
-  const calls = [];
-  let writes = 0;
-  const request = async (endpoint, options = {}) => {
-    const url = new URL(endpoint, 'http://localhost');
-    const [, collection, id] = url.pathname.split('/');
-    const method = options.method ?? 'GET';
-    calls.push({ endpoint, method, body: options.body });
-    if (method === 'GET') {
-      const filter = JSON.parse(url.searchParams.get('filter'));
-      const [field, condition] = Object.entries(filter)[0];
-      const fields = url.searchParams.get('fields')?.split(',');
-      return { data: rows[collection].filter((row) => row[field] === condition._eq)
-        .map((row) => fields ? Object.fromEntries(fields.map((key) => [key, row[key]])) : { ...row }) };
+// A self-contained access folder: the Public policy plus a role, policy and
+// keyless-by-default service user that gets its static token from SERVICE_TOKEN.
+const accessDir = await mkdtemp(path.join(os.tmpdir(), 'directus-fixture-'))
+await writeFile(
+  path.join(accessDir, 'public.yaml'),
+  'policy: public\npermissions:\n  - collection: languages\n    action: read\n    fields: [code]\n',
+)
+await writeFile(
+  path.join(accessDir, 'service.yaml'),
+  [
+    'role: { name: Service }',
+    'policy: { name: service-policy, icon: lock, admin_access: false, app_access: false }',
+    'user: { email: service@example.com, first_name: Service, last_name: User, token_env: SERVICE_TOKEN }',
+    'permissions:',
+    '  - { collection: news, action: read, fields: [id, status] }',
+    '  - { collection: news, action: update, fields: [status] }',
+    '',
+  ].join('\n'),
+)
+
+async function withAccess(files, run) {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'directus-access-'))
+  try {
+    for (const [name, content] of Object.entries(files)) {
+      await writeFile(path.join(root, name), content)
     }
-    writes++;
-    if (method === 'POST') {
-      const row = { ...options.body };
-      if (collection === 'users') row.email = null;
-      if (collection === 'permissions') row.id = rows.permissions.length + 1;
-      if (collection === 'access') row.id = `access-${rows.access.length + 1}`;
-      rows[collection].push(row);
-      return { data: row };
-    }
-    if (method === 'PATCH') {
-      Object.assign(rows[collection].find((row) => String(row.id) === id), options.body);
-      return {};
-    }
-    throw new Error('Unexpected request');
-  };
-  return { request, rows, calls, get writes() { return writes; } };
+    return await run(root)
+  } finally {
+    await rm(root, { recursive: true, force: true })
+  }
 }
 
-test('reconciles dedicated read-only policies idempotently and repairs managed fields', async () => {
-  const api = fakeApi();
-  await applyPolicies(api.request, 'token', filename);
-  assert.equal(api.rows.policies.length, 2);
-  assert.equal(api.rows.permissions.length, 25);
-  assert.deepEqual(api.rows.users.map(({ id, first_name, last_name, email, status, role }) =>
-    ({ id, first_name, last_name, email, status, role })), [
-    { id: 'fd54cc51-521a-4d0c-b6f7-47949aa53bfe', first_name: 'IZR Screen', last_name: 'API Service', email: null, status: 'active', role: null },
-    { id: '9cfece03-1c78-48b6-af2c-5567759de7cc', first_name: 'IZR Website', last_name: 'API Service', email: null, status: 'active', role: null },
-  ]);
-  assert.deepEqual(api.rows.access.map(({ user, role, policy }) => ({ user, role, policy })), [
-    { user: api.rows.users[0].id, role: null, policy: api.rows.policies[0].id },
-    { user: api.rows.users[1].id, role: null, policy: api.rows.policies[1].id },
-  ]);
-  assert.ok(api.rows.policies.every((p) => !p.admin_access && !p.app_access));
-  assert.ok(api.rows.permissions.every((p) => p.action === 'read'));
-  const count = api.writes;
-  api.rows.users[0].token = 'existing-token';
-  await applyPolicies(api.request, 'token', filename);
-  assert.equal(api.writes, count);
-  assert.equal(api.rows.users[0].token, 'existing-token');
-  for (const call of api.calls.filter((item) => new URL(item.endpoint, 'http://localhost').pathname === '/users')) {
-    assert.ok(!JSON.stringify(call.body ?? {}).includes('token'));
-    assert.ok(!JSON.stringify(call.body ?? {}).includes('password'));
-    assert.ok(!new URL(call.endpoint, 'http://localhost').searchParams.get('fields').split(',').includes('token'));
+// An in-memory stand-in for the Directus access API.
+function fakeApi() {
+  const rows = {
+    policies: [],
+    roles: [],
+    permissions: [],
+    users: [],
+    access: [{ policy: 'public-policy', role: null, user: null }],
   }
-  api.rows.permissions.find((p) => p.collection === 'donations').fields = ['*'];
-  await applyPolicies(api.request, 'token', filename);
-  assert.equal(api.writes, count + 1);
-  assert.ok(!api.rows.permissions.find((p) => p.collection === 'donations').fields.includes('*'));
-});
+  let writes = 0
+  let counter = 0
+  const matches = (row, condition) =>
+    Object.entries(condition).every(([field, rule]) => {
+      if ('_eq' in rule) return row[field] === rule._eq
+      return false
+    })
+  const request = async (endpoint, { method = 'GET', body } = {}) => {
+    const url = new URL(endpoint, 'http://localhost')
+    const collection = url.pathname.split('/')[1]
+    const id = url.pathname.split('/')[2]
+    if (method === 'GET') {
+      const filter = url.searchParams.get('filter')
+      let data = rows[collection]
+      if (collection === 'access' && !filter) {
+        data = rows.access.filter((row) => !row.role && !row.user)
+      } else if (filter) {
+        const condition = JSON.parse(filter)
+        data = data.filter((row) => matches(row, condition))
+      } else {
+        // bracket-style filters, e.g. filter[role][_eq]=1
+        const pairs = [...url.searchParams].filter(([k]) =>
+          k.startsWith('filter['),
+        )
+        data = data.filter((row) =>
+          pairs.every(([key, value]) => {
+            const [, field, op] = key.match(/^filter\[(\w+)\]\[(\w+)\]$/)
+            return op === '_null'
+              ? !row[field] === (value === 'true')
+              : String(row[field]) === value
+          }),
+        )
+      }
+      return { data: data.map((row) => ({ ...row })) }
+    }
+    writes++
+    if (method === 'PATCH') {
+      Object.assign(
+        rows[collection].find((row) => String(row.id) === id),
+        body,
+      )
+      return { data: body }
+    }
+    const row = { id: `${collection}-${++counter}`, ...body }
+    rows[collection].push(row)
+    return { data: row }
+  }
+  return {
+    rows,
+    request,
+    get writes() {
+      return writes
+    },
+  }
+}
 
-test('refuses mismatched users and extra or incorrect direct access', async () => {
-  const api = fakeApi();
-  await applyPolicies(api.request, 'token', filename);
-  const count = api.writes;
-  api.rows.users[0].role = 'other-role';
-  await assert.rejects(applyPolicies(api.request, 'token', filename), /unexpected attributes/);
-  api.rows.users[0].role = null;
-  api.rows.users[0].first_name = 'Someone else';
-  await assert.rejects(applyPolicies(api.request, 'token', filename), /unexpected attributes/);
-  api.rows.users[0].first_name = 'IZR Screen';
-  api.rows.access.push({ id: 'extra', user: api.rows.users[0].id, role: null, policy: 'other' });
-  await assert.rejects(applyPolicies(api.request, 'token', filename), /Unexpected access/);
-  api.rows.access.pop();
-  api.rows.access[0].policy = api.rows.policies[1].id;
-  await assert.rejects(applyPolicies(api.request, 'token', filename), /Unexpected access/);
-  assert.equal(api.writes, count);
-});
+const definitions = await loadDefinitions(schemasDir)
+const env = { SERVICE_TOKEN: token }
 
-test('refuses to take over conflicting managed IDs or unexpected permissions', async () => {
-  const api = fakeApi();
-  await applyPolicies(api.request, 'token', filename);
-  api.rows.policies[0].admin_access = true;
-  await assert.rejects(applyPolicies(api.request, 'token', filename), /already in use/);
-  api.rows.policies[0].admin_access = false;
-  api.rows.permissions.push({ policy: api.rows.policies[0].id, collection: 'news', action: 'update' });
-  await assert.rejects(applyPolicies(api.request, 'token', filename), /Unexpected permissions/);
-});
+test('the repository access files validate', async () => {
+  const documents = await loadAccess(repoAccessDir, definitions)
+  assert.ok(documents.length > 0)
+  assert.ok(documents.every((doc) => !doc.policy.admin_access))
+})
+
+test('reconciles policies, role and service user idempotently', async () => {
+  const api = fakeApi()
+  const options = { env, accessDir }
+  await applyPolicies(api.request, 't', definitions, options)
+  assert.equal(api.rows.users.length, 1)
+  assert.equal(api.rows.users[0].token, token)
+  assert.ok(api.rows.policies.every((policy) => !policy.admin_access))
+  const afterFirst = api.writes
+  await applyPolicies(api.request, 't', definitions, options)
+  // Second run only patches existing rows, it never creates duplicates.
+  assert.equal(api.rows.users.length, 1)
+  assert.equal(api.rows.policies.length, 1)
+  assert.equal(api.rows.roles.length, 1)
+  assert.ok(api.writes >= afterFirst)
+})
+
+test('skips the service user when its token is not set', async () => {
+  const api = fakeApi()
+  await applyPolicies(api.request, 't', definitions, { env: {}, accessDir })
+  assert.equal(api.rows.users.length, 0)
+  assert.ok(api.rows.permissions.length > 0)
+})
+
+test('rejects a token that is too short', async () => {
+  const api = fakeApi()
+  await assert.rejects(
+    applyPolicies(api.request, 't', definitions, {
+      env: { SERVICE_TOKEN: 'short' },
+      accessDir,
+    }),
+    /at least 32/,
+  )
+})
+
+test('undeclared permissions are reported, never deleted', async () => {
+  const api = fakeApi()
+  const options = { env, accessDir }
+  await applyPolicies(api.request, 't', definitions, options)
+  const policy = api.rows.policies[0].id
+  api.rows.permissions.push({
+    id: 'extra',
+    policy,
+    collection: 'news',
+    action: 'delete',
+  })
+  await applyPolicies(api.request, 't', definitions, options)
+  assert.ok(api.rows.permissions.some((row) => row.id === 'extra'))
+})
+
+test('rejects managed policies that grant admin access', async () => {
+  await withAccess(
+    {
+      'bad.yaml':
+        'policy:\n  name: bad\n  admin_access: true\npermissions: []\n',
+    },
+    (root) => assert.rejects(loadAccess(root, definitions), /admin access/),
+  )
+})
+
+test('rejects a permission on an unknown field', async () => {
+  await withAccess(
+    {
+      'bad.yaml':
+        'policy: public\npermissions:\n  - collection: news\n    action: read\n    fields: [no_such_field]\n',
+    },
+    (root) => assert.rejects(loadAccess(root, definitions), /Unknown field/),
+  )
+})

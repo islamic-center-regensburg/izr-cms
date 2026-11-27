@@ -6,12 +6,13 @@ meta:
   note: General settings for the mosque's single display.
 fields:
   - field: id
-    type: integer
+    type: uuid
     schema:
       is_primary_key: true
-      has_auto_increment: true
+      is_nullable: false
     meta:
       interface: input
+      special: [uuid]
       hidden: true
       readonly: true
   - field: timezone
@@ -56,7 +57,7 @@ fields:
         mode:
           _in: [automatic, manual]
   - field: manual_section
-    type: integer
+    type: uuid
     schema:
       is_nullable: true
     meta:
