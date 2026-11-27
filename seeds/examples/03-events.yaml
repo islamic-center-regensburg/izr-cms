@@ -1,0 +1,5 @@
+# Example data: loaded only when CMS_ENV=dev. Keys are derived from the first slug, so reruns are idempotent.
+collection: events
+items:
+  - {id: 6bc480c5-4eed-5041-a85b-da31bfe13965, status: published, starts_at: "2026-11-27T18:00:00+01:00", ends_at: "2026-11-27T21:00:00+01:00"}
+  - {id: 6b876cc5-0ee8-53cc-ab99-bcb850d5fc34, status: published, starts_at: "2026-12-05T14:00:00+01:00"}

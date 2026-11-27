@@ -1,0 +1,60 @@
+# The MCP user: lets an AI assistant read the model and content and draft
+# news and events through Directus's MCP server (/mcp, bearer token).
+# No delete, no donations, no schema or user access. New and edited rows stay
+# drafts: this user may only write draft, never `published`.
+role:
+  name: IZR MCP
+  icon: smart_toy
+  description: Reads the CMS and drafts news and events through MCP.
+policy:
+  name: IZR MCP assistant
+  icon: lock
+  admin_access: false
+  app_access: false
+  description: Read content, write drafts of news and events. No deletes, no donations.
+user:
+  email: mcp@service.example.com
+  first_name: IZR MCP
+  last_name: Assistant
+  # Terraform generates this token; it is handed to whoever runs the assistant.
+  token_env: MCP_TOKEN
+permissions:
+  - { collection: languages, action: read, fields: ['*'] }
+  - { collection: news, action: read, fields: ['*'] }
+  - { collection: news_translations, action: read, fields: ['*'] }
+  - { collection: events, action: read, fields: ['*'] }
+  - { collection: events_translations, action: read, fields: ['*'] }
+  - { collection: campaigns, action: read, fields: ['*'] }
+  - { collection: campaigns_translations, action: read, fields: ['*'] }
+  - { collection: prayer_times, action: read, fields: ['*'] }
+  - { collection: iqama_times, action: read, fields: ['*'] }
+  - { collection: screen_sections, action: read, fields: ['*'] }
+  - { collection: screen_config, action: read, fields: ['*'] }
+  - collection: news
+    action: create
+    fields: ['*']
+    validation: { status: { _in: [draft] } }
+  - collection: news
+    action: update
+    fields: ['*']
+    permissions: { status: { _in: [draft] } }
+    validation: { status: { _in: [draft] } }
+  - { collection: news_translations, action: create, fields: ['*'] }
+  - collection: news_translations
+    action: update
+    fields: ['*']
+    permissions: { news_id: { status: { _in: [draft] } } }
+  - collection: events
+    action: create
+    fields: ['*']
+    validation: { status: { _in: [draft] } }
+  - collection: events
+    action: update
+    fields: ['*']
+    permissions: { status: { _in: [draft] } }
+    validation: { status: { _in: [draft] } }
+  - { collection: events_translations, action: create, fields: ['*'] }
+  - collection: events_translations
+    action: update
+    fields: ['*']
+    permissions: { events_id: { status: { _in: [draft] } } }

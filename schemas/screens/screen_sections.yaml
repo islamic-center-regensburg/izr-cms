@@ -7,12 +7,13 @@ meta:
   note: Ordered content sections for the mosque's display.
 fields:
   - field: id
-    type: integer
+    type: uuid
     schema:
       is_primary_key: true
-      has_auto_increment: true
+      is_nullable: false
     meta:
       interface: input
+      special: [uuid]
       hidden: true
       readonly: true
   - field: name

@@ -1,0 +1,4 @@
+# Example data: loaded only when CMS_ENV=dev. Keys are derived from a fixed name, so reruns are idempotent.
+collection: screen_config
+items:
+  - {id: f661fdfc-50da-5094-a4e0-620e4b517b19, timezone: Europe/Berlin, languages: [de, en, ar], mode: automatic, manual_section: null, manual_language: de, orientation: landscape, refresh_interval_seconds: 60, show_clock: true}

@@ -1,0 +1,52 @@
+# The mosque screen app: read-only, only what is currently on air.
+role:
+  name: IZR Screen
+  icon: tv
+  description: Reads the content shown on the mosque screen.
+policy:
+  name: IZR screen read-only
+  icon: lock
+  admin_access: false
+  app_access: false
+  description: Read-only access to what the screen shows right now.
+user:
+  email: screen@service.example.com
+  first_name: IZR Screen
+  last_name: API Service
+  # Terraform generates this token and passes it to the CMS and to the screen app.
+  token_env: SCREEN_TOKEN
+permissions:
+  - { collection: screen_config, action: read, fields: ['*'] }
+  - { collection: screen_sections, action: read, fields: ['*'] }
+  - { collection: prayer_times, action: read, fields: ['*'] }
+  - { collection: iqama_times, action: read, fields: ['*'] }
+  - { collection: languages, action: read, fields: ['*'] }
+  - collection: news
+    action: read
+    fields: ['*']
+    permissions: &screen_news
+      status: { _eq: published }
+      _and:
+        - _or: [{ published_at: { _null: true } }, { published_at: { _lte: $NOW } }]
+        - _or: [{ expires_at: { _null: true } }, { expires_at: { _gte: $NOW } }]
+  - { collection: news_translations, action: read, fields: ['*'], permissions: { news_id: *screen_news } }
+  - collection: events
+    action: read
+    fields: ['*']
+    permissions: &screen_events
+      status: { _eq: published }
+      starts_at: { _gte: $NOW }
+  - { collection: events_translations, action: read, fields: ['*'], permissions: { events_id: *screen_events } }
+  - collection: campaigns
+    action: read
+    fields: ['*']
+    permissions: &screen_campaigns
+      status: { _eq: active }
+      _and:
+        - _or: [{ starts_at: { _null: true } }, { starts_at: { _lte: $NOW } }]
+        - _or: [{ ends_at: { _null: true } }, { ends_at: { _gte: $NOW } }]
+  - { collection: campaigns_translations, action: read, fields: ['*'], permissions: { campaigns_id: *screen_campaigns } }
+  - collection: donations
+    action: read
+    fields: [campaign, amount, currency, donated_at, method, status]
+    permissions: { status: { _in: [confirmed, pending] }, campaign: *screen_campaigns }

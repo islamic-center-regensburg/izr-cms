@@ -1,0 +1,5116 @@
+{
+  "version": 1,
+  "directus": "11.17.4",
+  "vendor": "postgres",
+  "collections": [
+    {
+      "collection": "campaigns",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "campaigns",
+        "color": null,
+        "display_template": null,
+        "group": null,
+        "hidden": false,
+        "icon": "volunteer_activism",
+        "item_duplication_fields": null,
+        "note": "Mosque fundraising campaigns.",
+        "preview_url": null,
+        "singleton": false,
+        "sort": null,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "campaigns"
+      }
+    },
+    {
+      "collection": "campaigns_translations",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "campaigns_translations",
+        "color": null,
+        "display_template": null,
+        "group": null,
+        "hidden": true,
+        "icon": null,
+        "item_duplication_fields": null,
+        "note": "Localized campaign content.",
+        "preview_url": null,
+        "singleton": false,
+        "sort": null,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "campaigns_translations"
+      }
+    },
+    {
+      "collection": "donations",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "donations",
+        "color": null,
+        "display_template": null,
+        "group": null,
+        "hidden": false,
+        "icon": "payments",
+        "item_duplication_fields": null,
+        "note": "Anonymous donations; no donor identity or contact information.",
+        "preview_url": null,
+        "singleton": false,
+        "sort": null,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "donations"
+      }
+    },
+    {
+      "collection": "events",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "events",
+        "color": null,
+        "display_template": null,
+        "group": null,
+        "hidden": false,
+        "icon": "event",
+        "item_duplication_fields": null,
+        "note": "Mosque event information; no registration.",
+        "preview_url": null,
+        "singleton": false,
+        "sort": null,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "events"
+      }
+    },
+    {
+      "collection": "events_translations",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "events_translations",
+        "color": null,
+        "display_template": null,
+        "group": null,
+        "hidden": true,
+        "icon": null,
+        "item_duplication_fields": null,
+        "note": "Localized event information.",
+        "preview_url": null,
+        "singleton": false,
+        "sort": null,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "events_translations"
+      }
+    },
+    {
+      "collection": "iqama_times",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "iqama_times",
+        "color": null,
+        "display_template": null,
+        "group": null,
+        "hidden": false,
+        "icon": "groups",
+        "item_duplication_fields": null,
+        "note": "Weekly iqama times; multiple entries may apply to the same prayer and weekday.",
+        "preview_url": null,
+        "singleton": false,
+        "sort": null,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "iqama_times"
+      }
+    },
+    {
+      "collection": "languages",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "languages",
+        "color": null,
+        "display_template": "{{name}}",
+        "group": null,
+        "hidden": false,
+        "icon": "language",
+        "item_duplication_fields": null,
+        "note": "Supported content languages.",
+        "preview_url": null,
+        "singleton": false,
+        "sort": null,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "languages"
+      }
+    },
+    {
+      "collection": "news",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "news",
+        "color": null,
+        "display_template": null,
+        "group": null,
+        "hidden": false,
+        "icon": "newspaper",
+        "item_duplication_fields": null,
+        "note": "Mosque news and announcements.",
+        "preview_url": null,
+        "singleton": false,
+        "sort": null,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "news"
+      }
+    },
+    {
+      "collection": "news_translations",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "news_translations",
+        "color": null,
+        "display_template": null,
+        "group": null,
+        "hidden": true,
+        "icon": null,
+        "item_duplication_fields": null,
+        "note": "Localized news content.",
+        "preview_url": null,
+        "singleton": false,
+        "sort": null,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "news_translations"
+      }
+    },
+    {
+      "collection": "prayer_times",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "prayer_times",
+        "color": null,
+        "display_template": null,
+        "group": null,
+        "hidden": false,
+        "icon": "schedule",
+        "item_duplication_fields": null,
+        "note": "Daily prayer times in the mosque's local timezone.",
+        "preview_url": null,
+        "singleton": false,
+        "sort": null,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "prayer_times"
+      }
+    },
+    {
+      "collection": "screen_config",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "screen_config",
+        "color": null,
+        "display_template": null,
+        "group": null,
+        "hidden": false,
+        "icon": "settings",
+        "item_duplication_fields": null,
+        "note": "General settings for the mosque's single display.",
+        "preview_url": null,
+        "singleton": true,
+        "sort": null,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "screen_config"
+      }
+    },
+    {
+      "collection": "screen_sections",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "screen_sections",
+        "color": null,
+        "display_template": "{{name}}",
+        "group": null,
+        "hidden": false,
+        "icon": "view_carousel",
+        "item_duplication_fields": null,
+        "note": "Ordered content sections for the mosque's display.",
+        "preview_url": null,
+        "singleton": false,
+        "sort": null,
+        "sort_field": "sort",
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "screen_sections"
+      }
+    }
+  ],
+  "fields": [
+    {
+      "collection": "campaigns",
+      "field": "id",
+      "type": "uuid",
+      "meta": {
+        "collection": "campaigns",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 1,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "campaigns",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": true,
+        "is_indexed": false,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "campaigns",
+      "field": "translations",
+      "type": "alias",
+      "meta": {
+        "collection": "campaigns",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "translations",
+        "group": null,
+        "hidden": false,
+        "interface": "translations",
+        "note": null,
+        "options": {
+          "defaultLanguage": "de",
+          "languageDirectionField": "direction",
+          "languageField": "name"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 2,
+        "special": [
+          "translations"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "campaigns",
+      "field": "target_amount",
+      "type": "decimal",
+      "meta": {
+        "collection": "campaigns",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "target_amount",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "Optional fundraising goal in the campaign's currency.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 3,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "_or": [
+            {
+              "target_amount": {
+                "_null": true
+              }
+            },
+            {
+              "target_amount": {
+                "_gt": 0
+              }
+            }
+          ]
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "target_amount",
+        "table": "campaigns",
+        "data_type": "numeric",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": 12,
+        "numeric_scale": 2,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "campaigns",
+      "field": "currency",
+      "type": "string",
+      "meta": {
+        "collection": "campaigns",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "currency",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "Uppercase ISO 4217 currency code.",
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "currency": {
+            "_regex": "^[A-Z]{3}$"
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "currency",
+        "table": "campaigns",
+        "data_type": "character varying",
+        "default_value": "EUR",
+        "max_length": 3,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "campaigns",
+      "field": "starts_at",
+      "type": "timestamp",
+      "meta": {
+        "collection": "campaigns",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "starts_at",
+        "group": null,
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "starts_at",
+        "table": "campaigns",
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "campaigns",
+      "field": "ends_at",
+      "type": "timestamp",
+      "meta": {
+        "collection": "campaigns",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "ends_at",
+        "group": null,
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 6,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "ends_at",
+        "table": "campaigns",
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "campaigns",
+      "field": "status",
+      "type": "string",
+      "meta": {
+        "collection": "campaigns",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "status",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": null,
+        "options": {
+          "choices": [
+            {
+              "text": "Draft",
+              "value": "draft"
+            },
+            {
+              "text": "Active",
+              "value": "active"
+            },
+            {
+              "text": "Completed",
+              "value": "completed"
+            },
+            {
+              "text": "Archived",
+              "value": "archived"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 7,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "status": {
+            "_in": [
+              "draft",
+              "active",
+              "completed",
+              "archived"
+            ]
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "status",
+        "table": "campaigns",
+        "data_type": "character varying",
+        "default_value": "draft",
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "campaigns",
+      "field": "thumbnail",
+      "type": "uuid",
+      "meta": {
+        "collection": "campaigns",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "thumbnail",
+        "group": null,
+        "hidden": false,
+        "interface": "file-image",
+        "note": "Optional thumbnail shown on the campaign card; falls back to the default background when empty.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 8,
+        "special": [
+          "file"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "thumbnail",
+        "table": "campaigns",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "directus_files",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "campaigns_translations",
+      "field": "id",
+      "type": "uuid",
+      "meta": {
+        "collection": "campaigns_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 1,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "campaigns_translations",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": true,
+        "is_indexed": false,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "campaigns_translations",
+      "field": "campaigns_id",
+      "type": "uuid",
+      "meta": {
+        "collection": "campaigns_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "campaigns_id",
+        "group": null,
+        "hidden": true,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 2,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "campaigns_id",
+        "table": "campaigns_translations",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "campaigns",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "campaigns_translations",
+      "field": "languages_code",
+      "type": "string",
+      "meta": {
+        "collection": "campaigns_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "languages_code",
+        "group": null,
+        "hidden": true,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 3,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "languages_code",
+        "table": "campaigns_translations",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 2,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "languages",
+        "foreign_key_column": "code"
+      }
+    },
+    {
+      "collection": "campaigns_translations",
+      "field": "name",
+      "type": "string",
+      "meta": {
+        "collection": "campaigns_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "name",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "name",
+        "table": "campaigns_translations",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "campaigns_translations",
+      "field": "slug",
+      "type": "string",
+      "meta": {
+        "collection": "campaigns_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "slug",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "URL path segment for this language; lowercase letters, digits, and hyphens only. Must be unique per language; not enforced by the schema.",
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "slug": {
+            "_regex": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "slug",
+        "table": "campaigns_translations",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "campaigns_translations",
+      "field": "description",
+      "type": "text",
+      "meta": {
+        "collection": "campaigns_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "description",
+        "group": null,
+        "hidden": false,
+        "interface": "input-rich-text-html",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 6,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "description",
+        "table": "campaigns_translations",
+        "data_type": "text",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "campaigns_translations",
+      "field": "screen_summary",
+      "type": "text",
+      "meta": {
+        "collection": "campaigns_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "screen_summary",
+        "group": null,
+        "hidden": false,
+        "interface": "input-rich-text-html",
+        "note": "Optional short, localized summary for mosque screens.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 7,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "screen_summary",
+        "table": "campaigns_translations",
+        "data_type": "text",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "campaigns_translations",
+      "field": "meta_title",
+      "type": "string",
+      "meta": {
+        "collection": "campaigns_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_title",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "Optional SEO page title; defaults to name when empty.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 8,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "meta_title",
+        "table": "campaigns_translations",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "campaigns_translations",
+      "field": "meta_description",
+      "type": "text",
+      "meta": {
+        "collection": "campaigns_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_description",
+        "group": null,
+        "hidden": false,
+        "interface": "input-multiline",
+        "note": "Optional SEO meta description.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 9,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "meta_description",
+        "table": "campaigns_translations",
+        "data_type": "text",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "donations",
+      "field": "id",
+      "type": "uuid",
+      "meta": {
+        "collection": "donations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 1,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "donations",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": true,
+        "is_indexed": false,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "donations",
+      "field": "campaign",
+      "type": "uuid",
+      "meta": {
+        "collection": "donations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "campaign",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": "Optional; leave empty for a general donation.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 2,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "campaign",
+        "table": "donations",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "campaigns",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "donations",
+      "field": "amount",
+      "type": "decimal",
+      "meta": {
+        "collection": "donations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "amount",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 3,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "amount": {
+            "_gt": 0
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "amount",
+        "table": "donations",
+        "data_type": "numeric",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": 12,
+        "numeric_scale": 2,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "donations",
+      "field": "currency",
+      "type": "string",
+      "meta": {
+        "collection": "donations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "currency",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "Uppercase ISO 4217 currency code; must match the linked campaign.",
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "currency": {
+            "_regex": "^[A-Z]{3}$"
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "currency",
+        "table": "donations",
+        "data_type": "character varying",
+        "default_value": "EUR",
+        "max_length": 3,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "donations",
+      "field": "donated_at",
+      "type": "timestamp",
+      "meta": {
+        "collection": "donations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "donated_at",
+        "group": null,
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "donated_at",
+        "table": "donations",
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "donations",
+      "field": "method",
+      "type": "string",
+      "meta": {
+        "collection": "donations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "method",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": null,
+        "options": {
+          "choices": [
+            {
+              "text": "Cash",
+              "value": "cash"
+            },
+            {
+              "text": "Bank transfer",
+              "value": "bank_transfer"
+            },
+            {
+              "text": "Online",
+              "value": "online"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 6,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "method": {
+            "_in": [
+              "cash",
+              "bank_transfer",
+              "online"
+            ]
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "method",
+        "table": "donations",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "donations",
+      "field": "status",
+      "type": "string",
+      "meta": {
+        "collection": "donations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "status",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": null,
+        "options": {
+          "choices": [
+            {
+              "text": "Pending",
+              "value": "pending"
+            },
+            {
+              "text": "Confirmed",
+              "value": "confirmed"
+            },
+            {
+              "text": "Refunded",
+              "value": "refunded"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 7,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "status": {
+            "_in": [
+              "pending",
+              "confirmed",
+              "refunded"
+            ]
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "status",
+        "table": "donations",
+        "data_type": "character varying",
+        "default_value": "pending",
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "events",
+      "field": "id",
+      "type": "uuid",
+      "meta": {
+        "collection": "events",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 1,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "events",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": true,
+        "is_indexed": false,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "events",
+      "field": "translations",
+      "type": "alias",
+      "meta": {
+        "collection": "events",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "translations",
+        "group": null,
+        "hidden": false,
+        "interface": "translations",
+        "note": null,
+        "options": {
+          "defaultLanguage": "de",
+          "languageDirectionField": "direction",
+          "languageField": "name"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 2,
+        "special": [
+          "translations"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "events",
+      "field": "starts_at",
+      "type": "timestamp",
+      "meta": {
+        "collection": "events",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "starts_at",
+        "group": null,
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 3,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "starts_at",
+        "table": "events",
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "events",
+      "field": "ends_at",
+      "type": "timestamp",
+      "meta": {
+        "collection": "events",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "ends_at",
+        "group": null,
+        "hidden": false,
+        "interface": "datetime",
+        "note": "Optional event end time.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "ends_at",
+        "table": "events",
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "events",
+      "field": "status",
+      "type": "string",
+      "meta": {
+        "collection": "events",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "status",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": null,
+        "options": {
+          "choices": [
+            {
+              "text": "Draft",
+              "value": "draft"
+            },
+            {
+              "text": "Published",
+              "value": "published"
+            },
+            {
+              "text": "Cancelled",
+              "value": "cancelled"
+            },
+            {
+              "text": "Archived",
+              "value": "archived"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "status": {
+            "_in": [
+              "draft",
+              "published",
+              "cancelled",
+              "archived"
+            ]
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "status",
+        "table": "events",
+        "data_type": "character varying",
+        "default_value": "draft",
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "events",
+      "field": "thumbnail",
+      "type": "uuid",
+      "meta": {
+        "collection": "events",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "thumbnail",
+        "group": null,
+        "hidden": false,
+        "interface": "file-image",
+        "note": "Optional thumbnail shown on the event card; falls back to the default background when empty.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 6,
+        "special": [
+          "file"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "thumbnail",
+        "table": "events",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "directus_files",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "events_translations",
+      "field": "id",
+      "type": "uuid",
+      "meta": {
+        "collection": "events_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 1,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "events_translations",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": true,
+        "is_indexed": false,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "events_translations",
+      "field": "events_id",
+      "type": "uuid",
+      "meta": {
+        "collection": "events_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "events_id",
+        "group": null,
+        "hidden": true,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 2,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "events_id",
+        "table": "events_translations",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "events",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "events_translations",
+      "field": "languages_code",
+      "type": "string",
+      "meta": {
+        "collection": "events_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "languages_code",
+        "group": null,
+        "hidden": true,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 3,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "languages_code",
+        "table": "events_translations",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 2,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "languages",
+        "foreign_key_column": "code"
+      }
+    },
+    {
+      "collection": "events_translations",
+      "field": "title",
+      "type": "string",
+      "meta": {
+        "collection": "events_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "title",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "title",
+        "table": "events_translations",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "events_translations",
+      "field": "slug",
+      "type": "string",
+      "meta": {
+        "collection": "events_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "slug",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "Required URL path segment for this language; lowercase letters, digits, and hyphens only. Must be unique per language; not enforced by the schema.",
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "slug": {
+            "_regex": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "slug",
+        "table": "events_translations",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "events_translations",
+      "field": "description",
+      "type": "text",
+      "meta": {
+        "collection": "events_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "description",
+        "group": null,
+        "hidden": false,
+        "interface": "input-rich-text-html",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 6,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "description",
+        "table": "events_translations",
+        "data_type": "text",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "events_translations",
+      "field": "screen_summary",
+      "type": "text",
+      "meta": {
+        "collection": "events_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "screen_summary",
+        "group": null,
+        "hidden": false,
+        "interface": "input-rich-text-html",
+        "note": "Optional short, localized summary for mosque screens.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 7,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "screen_summary",
+        "table": "events_translations",
+        "data_type": "text",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "events_translations",
+      "field": "location",
+      "type": "string",
+      "meta": {
+        "collection": "events_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "location",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 8,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "location",
+        "table": "events_translations",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "events_translations",
+      "field": "meta_title",
+      "type": "string",
+      "meta": {
+        "collection": "events_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_title",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "Optional SEO page title; defaults to title when empty.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 9,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "meta_title",
+        "table": "events_translations",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "events_translations",
+      "field": "meta_description",
+      "type": "text",
+      "meta": {
+        "collection": "events_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_description",
+        "group": null,
+        "hidden": false,
+        "interface": "input-multiline",
+        "note": "Optional SEO meta description.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 10,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "meta_description",
+        "table": "events_translations",
+        "data_type": "text",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "iqama_times",
+      "field": "id",
+      "type": "uuid",
+      "meta": {
+        "collection": "iqama_times",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 1,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "iqama_times",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": true,
+        "is_indexed": false,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "iqama_times",
+      "field": "prayer",
+      "type": "string",
+      "meta": {
+        "collection": "iqama_times",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "prayer",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": null,
+        "options": {
+          "choices": [
+            {
+              "text": "Fajr",
+              "value": "fajr"
+            },
+            {
+              "text": "Dhuhr",
+              "value": "dhuhr"
+            },
+            {
+              "text": "Jumu'ah",
+              "value": "jumuah"
+            },
+            {
+              "text": "Asr",
+              "value": "asr"
+            },
+            {
+              "text": "Maghrib",
+              "value": "maghrib"
+            },
+            {
+              "text": "Isha",
+              "value": "isha"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 2,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "prayer": {
+            "_in": [
+              "fajr",
+              "dhuhr",
+              "jumuah",
+              "asr",
+              "maghrib",
+              "isha"
+            ]
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "prayer",
+        "table": "iqama_times",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "iqama_times",
+      "field": "weekday",
+      "type": "string",
+      "meta": {
+        "collection": "iqama_times",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "weekday",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": null,
+        "options": {
+          "choices": [
+            {
+              "text": "Monday",
+              "value": "monday"
+            },
+            {
+              "text": "Tuesday",
+              "value": "tuesday"
+            },
+            {
+              "text": "Wednesday",
+              "value": "wednesday"
+            },
+            {
+              "text": "Thursday",
+              "value": "thursday"
+            },
+            {
+              "text": "Friday",
+              "value": "friday"
+            },
+            {
+              "text": "Saturday",
+              "value": "saturday"
+            },
+            {
+              "text": "Sunday",
+              "value": "sunday"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 3,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "weekday": {
+            "_in": [
+              "monday",
+              "tuesday",
+              "wednesday",
+              "thursday",
+              "friday",
+              "saturday",
+              "sunday"
+            ]
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "weekday",
+        "table": "iqama_times",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "iqama_times",
+      "field": "type",
+      "type": "string",
+      "meta": {
+        "collection": "iqama_times",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "type",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": null,
+        "options": {
+          "choices": [
+            {
+              "text": "Fixed time",
+              "value": "fixed"
+            },
+            {
+              "text": "Prayer-time offset",
+              "value": "offset"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "type": {
+            "_in": [
+              "fixed",
+              "offset"
+            ]
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "type",
+        "table": "iqama_times",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "iqama_times",
+      "field": "fixed_time",
+      "type": "time",
+      "meta": {
+        "collection": "iqama_times",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "fixed_time",
+        "group": null,
+        "hidden": false,
+        "interface": "datetime",
+        "note": "Local time; use only when type is fixed.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "fixed_time",
+        "table": "iqama_times",
+        "data_type": "time without time zone",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "iqama_times",
+      "field": "offset_minutes",
+      "type": "integer",
+      "meta": {
+        "collection": "iqama_times",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "offset_minutes",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "Signed minutes from the corresponding prayer time; use only when type is offset.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 6,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "offset_minutes",
+        "table": "iqama_times",
+        "data_type": "integer",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": 32,
+        "numeric_scale": 0,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "languages",
+      "field": "code",
+      "type": "string",
+      "meta": {
+        "collection": "languages",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "code",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": null,
+        "options": {
+          "choices": [
+            {
+              "text": "German",
+              "value": "de"
+            },
+            {
+              "text": "English",
+              "value": "en"
+            },
+            {
+              "text": "Arabic",
+              "value": "ar"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 1,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "code": {
+            "_in": [
+              "de",
+              "en",
+              "ar"
+            ]
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "code",
+        "table": "languages",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 2,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": true,
+        "is_indexed": false,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "languages",
+      "field": "name",
+      "type": "string",
+      "meta": {
+        "collection": "languages",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "name",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 2,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "name",
+        "table": "languages",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "languages",
+      "field": "direction",
+      "type": "string",
+      "meta": {
+        "collection": "languages",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "direction",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": null,
+        "options": {
+          "choices": [
+            {
+              "text": "Left to right",
+              "value": "ltr"
+            },
+            {
+              "text": "Right to left",
+              "value": "rtl"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 3,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "direction": {
+            "_in": [
+              "ltr",
+              "rtl"
+            ]
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "direction",
+        "table": "languages",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "news",
+      "field": "id",
+      "type": "uuid",
+      "meta": {
+        "collection": "news",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 1,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "news",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": true,
+        "is_indexed": false,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "news",
+      "field": "translations",
+      "type": "alias",
+      "meta": {
+        "collection": "news",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "translations",
+        "group": null,
+        "hidden": false,
+        "interface": "translations",
+        "note": null,
+        "options": {
+          "defaultLanguage": "de",
+          "languageDirectionField": "direction",
+          "languageField": "name"
+        },
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 2,
+        "special": [
+          "translations"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "news",
+      "field": "status",
+      "type": "string",
+      "meta": {
+        "collection": "news",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "status",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": null,
+        "options": {
+          "choices": [
+            {
+              "text": "Draft",
+              "value": "draft"
+            },
+            {
+              "text": "Published",
+              "value": "published"
+            },
+            {
+              "text": "Archived",
+              "value": "archived"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 3,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "status": {
+            "_in": [
+              "draft",
+              "published",
+              "archived"
+            ]
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "status",
+        "table": "news",
+        "data_type": "character varying",
+        "default_value": "draft",
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "news",
+      "field": "published_at",
+      "type": "timestamp",
+      "meta": {
+        "collection": "news",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "published_at",
+        "group": null,
+        "hidden": false,
+        "interface": "datetime",
+        "note": "Optional start of visibility; empty means immediately when published.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "published_at",
+        "table": "news",
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "news",
+      "field": "expires_at",
+      "type": "timestamp",
+      "meta": {
+        "collection": "news",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "expires_at",
+        "group": null,
+        "hidden": false,
+        "interface": "datetime",
+        "note": "Optional end of visibility; empty means no expiry.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "expires_at",
+        "table": "news",
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "news",
+      "field": "thumbnail",
+      "type": "uuid",
+      "meta": {
+        "collection": "news",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "thumbnail",
+        "group": null,
+        "hidden": false,
+        "interface": "file-image",
+        "note": "Optional thumbnail shown on the news card; falls back to the default background when empty.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 6,
+        "special": [
+          "file"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "thumbnail",
+        "table": "news",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "directus_files",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "news_translations",
+      "field": "id",
+      "type": "uuid",
+      "meta": {
+        "collection": "news_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 1,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "news_translations",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": true,
+        "is_indexed": false,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "news_translations",
+      "field": "news_id",
+      "type": "uuid",
+      "meta": {
+        "collection": "news_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "news_id",
+        "group": null,
+        "hidden": true,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 2,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "news_id",
+        "table": "news_translations",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "news",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "news_translations",
+      "field": "languages_code",
+      "type": "string",
+      "meta": {
+        "collection": "news_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "languages_code",
+        "group": null,
+        "hidden": true,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 3,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "languages_code",
+        "table": "news_translations",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 2,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "languages",
+        "foreign_key_column": "code"
+      }
+    },
+    {
+      "collection": "news_translations",
+      "field": "title",
+      "type": "string",
+      "meta": {
+        "collection": "news_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "title",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "title",
+        "table": "news_translations",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "news_translations",
+      "field": "slug",
+      "type": "string",
+      "meta": {
+        "collection": "news_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "slug",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "URL path segment for this language; lowercase letters, digits, and hyphens only. Must be unique per language; not enforced by the schema.",
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "slug": {
+            "_regex": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "slug",
+        "table": "news_translations",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "news_translations",
+      "field": "body",
+      "type": "text",
+      "meta": {
+        "collection": "news_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "body",
+        "group": null,
+        "hidden": false,
+        "interface": "input-rich-text-html",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 6,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "body",
+        "table": "news_translations",
+        "data_type": "text",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "news_translations",
+      "field": "screen_summary",
+      "type": "text",
+      "meta": {
+        "collection": "news_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "screen_summary",
+        "group": null,
+        "hidden": false,
+        "interface": "input-rich-text-html",
+        "note": "Optional short, localized summary for mosque screens.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 7,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "screen_summary",
+        "table": "news_translations",
+        "data_type": "text",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "news_translations",
+      "field": "meta_title",
+      "type": "string",
+      "meta": {
+        "collection": "news_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_title",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "Optional SEO page title; defaults to title when empty.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 8,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "meta_title",
+        "table": "news_translations",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "news_translations",
+      "field": "meta_description",
+      "type": "text",
+      "meta": {
+        "collection": "news_translations",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_description",
+        "group": null,
+        "hidden": false,
+        "interface": "input-multiline",
+        "note": "Optional SEO meta description.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 9,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "meta_description",
+        "table": "news_translations",
+        "data_type": "text",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "prayer_times",
+      "field": "date",
+      "type": "date",
+      "meta": {
+        "collection": "prayer_times",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "date",
+        "group": null,
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 1,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "date",
+        "table": "prayer_times",
+        "data_type": "date",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": true,
+        "is_indexed": false,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "prayer_times",
+      "field": "hijri",
+      "type": "string",
+      "meta": {
+        "collection": "prayer_times",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "hijri",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "Hijri calendar date for this entry, as YYYY-MM-DD (hijri year-month-day).",
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 2,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "hijri": {
+            "_regex": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "hijri",
+        "table": "prayer_times",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 10,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "prayer_times",
+      "field": "fajr",
+      "type": "time",
+      "meta": {
+        "collection": "prayer_times",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "fajr",
+        "group": null,
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 3,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "fajr",
+        "table": "prayer_times",
+        "data_type": "time without time zone",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "prayer_times",
+      "field": "sunrise",
+      "type": "time",
+      "meta": {
+        "collection": "prayer_times",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "sunrise",
+        "group": null,
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "sunrise",
+        "table": "prayer_times",
+        "data_type": "time without time zone",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "prayer_times",
+      "field": "dhuhr",
+      "type": "time",
+      "meta": {
+        "collection": "prayer_times",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "dhuhr",
+        "group": null,
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "dhuhr",
+        "table": "prayer_times",
+        "data_type": "time without time zone",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "prayer_times",
+      "field": "jumuah",
+      "type": "time",
+      "meta": {
+        "collection": "prayer_times",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "jumuah",
+        "group": null,
+        "hidden": false,
+        "interface": "datetime",
+        "note": "Friday's Jumu'ah reference time, used for offset-based iqama times.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 6,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "jumuah",
+        "table": "prayer_times",
+        "data_type": "time without time zone",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "prayer_times",
+      "field": "asr",
+      "type": "time",
+      "meta": {
+        "collection": "prayer_times",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "asr",
+        "group": null,
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 7,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "asr",
+        "table": "prayer_times",
+        "data_type": "time without time zone",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "prayer_times",
+      "field": "maghrib",
+      "type": "time",
+      "meta": {
+        "collection": "prayer_times",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "maghrib",
+        "group": null,
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 8,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "maghrib",
+        "table": "prayer_times",
+        "data_type": "time without time zone",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "prayer_times",
+      "field": "isha",
+      "type": "time",
+      "meta": {
+        "collection": "prayer_times",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "isha",
+        "group": null,
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 9,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "isha",
+        "table": "prayer_times",
+        "data_type": "time without time zone",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "screen_config",
+      "field": "id",
+      "type": "uuid",
+      "meta": {
+        "collection": "screen_config",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 1,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "screen_config",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": true,
+        "is_indexed": false,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "screen_config",
+      "field": "timezone",
+      "type": "string",
+      "meta": {
+        "collection": "screen_config",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "timezone",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "IANA timezone, for example Europe/Berlin. Set this to the mosque's timezone.",
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 2,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "timezone",
+        "table": "screen_config",
+        "data_type": "character varying",
+        "default_value": "UTC",
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "screen_config",
+      "field": "languages",
+      "type": "csv",
+      "meta": {
+        "collection": "screen_config",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "languages",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-multiple",
+        "note": null,
+        "options": {
+          "choices": [
+            {
+              "text": "German",
+              "value": "de"
+            },
+            {
+              "text": "English",
+              "value": "en"
+            },
+            {
+              "text": "Arabic",
+              "value": "ar"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 3,
+        "special": [
+          "cast-csv"
+        ],
+        "translations": null,
+        "validation": {
+          "languages": {
+            "_nempty": true
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "languages",
+        "table": "screen_config",
+        "data_type": "text",
+        "default_value": "de,en,ar",
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "screen_config",
+      "field": "mode",
+      "type": "string",
+      "meta": {
+        "collection": "screen_config",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "mode",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": null,
+        "options": {
+          "choices": [
+            {
+              "text": "Automatic",
+              "value": "automatic"
+            },
+            {
+              "text": "Manual",
+              "value": "manual"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "mode": {
+            "_in": [
+              "automatic",
+              "manual"
+            ]
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "mode",
+        "table": "screen_config",
+        "data_type": "character varying",
+        "default_value": "automatic",
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "screen_config",
+      "field": "manual_section",
+      "type": "uuid",
+      "meta": {
+        "collection": "screen_config",
+        "conditions": [
+          {
+            "hidden": true,
+            "rule": {
+              "mode": {
+                "_neq": "manual"
+              }
+            }
+          },
+          {
+            "hidden": false,
+            "required": true,
+            "rule": {
+              "mode": {
+                "_eq": "manual"
+              }
+            }
+          }
+        ],
+        "display": null,
+        "display_options": null,
+        "field": "manual_section",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": "Section shown in manual mode, regardless of its automatic visibility settings.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 5,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "manual_section",
+        "table": "screen_config",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "screen_sections",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "screen_config",
+      "field": "manual_language",
+      "type": "string",
+      "meta": {
+        "collection": "screen_config",
+        "conditions": [
+          {
+            "hidden": true,
+            "rule": {
+              "mode": {
+                "_neq": "manual"
+              }
+            }
+          }
+        ],
+        "display": null,
+        "display_options": null,
+        "field": "manual_language",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": null,
+        "options": {
+          "choices": [
+            {
+              "text": "German",
+              "value": "de"
+            },
+            {
+              "text": "English",
+              "value": "en"
+            },
+            {
+              "text": "Arabic",
+              "value": "ar"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 6,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "manual_language": {
+            "_in": [
+              "de",
+              "en",
+              "ar"
+            ]
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "manual_language",
+        "table": "screen_config",
+        "data_type": "character varying",
+        "default_value": "de",
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "screen_config",
+      "field": "orientation",
+      "type": "string",
+      "meta": {
+        "collection": "screen_config",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "orientation",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": null,
+        "options": {
+          "choices": [
+            {
+              "text": "Landscape",
+              "value": "landscape"
+            },
+            {
+              "text": "Portrait",
+              "value": "portrait"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 7,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "orientation": {
+            "_in": [
+              "landscape",
+              "portrait"
+            ]
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "orientation",
+        "table": "screen_config",
+        "data_type": "character varying",
+        "default_value": "landscape",
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "screen_config",
+      "field": "refresh_interval_seconds",
+      "type": "integer",
+      "meta": {
+        "collection": "screen_config",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "refresh_interval_seconds",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 8,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "refresh_interval_seconds": {
+            "_gte": 1
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "refresh_interval_seconds",
+        "table": "screen_config",
+        "data_type": "integer",
+        "default_value": 60,
+        "max_length": null,
+        "numeric_precision": 32,
+        "numeric_scale": 0,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "screen_config",
+      "field": "show_clock",
+      "type": "boolean",
+      "meta": {
+        "collection": "screen_config",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "show_clock",
+        "group": null,
+        "hidden": false,
+        "interface": "boolean",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 9,
+        "special": [
+          "cast-boolean"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "show_clock",
+        "table": "screen_config",
+        "data_type": "boolean",
+        "default_value": true,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "screen_sections",
+      "field": "id",
+      "type": "uuid",
+      "meta": {
+        "collection": "screen_sections",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "searchable": true,
+        "sort": 1,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "screen_sections",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": true,
+        "is_indexed": false,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "screen_sections",
+      "field": "name",
+      "type": "string",
+      "meta": {
+        "collection": "screen_sections",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "name",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "Internal label, not translated display content.",
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 2,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "name",
+        "table": "screen_sections",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "screen_sections",
+      "field": "type",
+      "type": "string",
+      "meta": {
+        "collection": "screen_sections",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "type",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": null,
+        "options": {
+          "choices": [
+            {
+              "text": "Prayer times",
+              "value": "prayer_times"
+            },
+            {
+              "text": "News",
+              "value": "news"
+            },
+            {
+              "text": "Events",
+              "value": "events"
+            },
+            {
+              "text": "Campaign progress",
+              "value": "campaign_progress"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 3,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "type": {
+            "_in": [
+              "prayer_times",
+              "news",
+              "events",
+              "campaign_progress"
+            ]
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "type",
+        "table": "screen_sections",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "screen_sections",
+      "field": "enabled",
+      "type": "boolean",
+      "meta": {
+        "collection": "screen_sections",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "enabled",
+        "group": null,
+        "hidden": false,
+        "interface": "boolean",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 4,
+        "special": [
+          "cast-boolean"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "enabled",
+        "table": "screen_sections",
+        "data_type": "boolean",
+        "default_value": true,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "screen_sections",
+      "field": "sort",
+      "type": "integer",
+      "meta": {
+        "collection": "screen_sections",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "sort",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "sort": {
+            "_gte": 0
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "sort",
+        "table": "screen_sections",
+        "data_type": "integer",
+        "default_value": 0,
+        "max_length": null,
+        "numeric_precision": 32,
+        "numeric_scale": 0,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "screen_sections",
+      "field": "duration_seconds",
+      "type": "integer",
+      "meta": {
+        "collection": "screen_sections",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "duration_seconds",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 6,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "duration_seconds": {
+            "_gte": 1
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "duration_seconds",
+        "table": "screen_sections",
+        "data_type": "integer",
+        "default_value": 15,
+        "max_length": null,
+        "numeric_precision": 32,
+        "numeric_scale": 0,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "screen_sections",
+      "field": "visible_from",
+      "type": "timestamp",
+      "meta": {
+        "collection": "screen_sections",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "visible_from",
+        "group": null,
+        "hidden": false,
+        "interface": "datetime",
+        "note": "Optional start of section visibility.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 7,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "visible_from",
+        "table": "screen_sections",
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "screen_sections",
+      "field": "visible_until",
+      "type": "timestamp",
+      "meta": {
+        "collection": "screen_sections",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "visible_until",
+        "group": null,
+        "hidden": false,
+        "interface": "datetime",
+        "note": "Optional end of section visibility.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "searchable": true,
+        "sort": 8,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "visible_until",
+        "table": "screen_sections",
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "screen_sections",
+      "field": "max_items",
+      "type": "integer",
+      "meta": {
+        "collection": "screen_sections",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "max_items",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "Maximum content items; ignored for the prayer-times section.",
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "searchable": true,
+        "sort": 9,
+        "special": null,
+        "translations": null,
+        "validation": {
+          "max_items": {
+            "_gte": 1
+          }
+        },
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "max_items",
+        "table": "screen_sections",
+        "data_type": "integer",
+        "default_value": 5,
+        "max_length": null,
+        "numeric_precision": 32,
+        "numeric_scale": 0,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    }
+  ],
+  "systemFields": [
+    {
+      "collection": "directus_activity",
+      "field": "timestamp",
+      "schema": {
+        "is_indexed": true
+      }
+    },
+    {
+      "collection": "directus_revisions",
+      "field": "activity",
+      "schema": {
+        "is_indexed": true
+      }
+    },
+    {
+      "collection": "directus_revisions",
+      "field": "parent",
+      "schema": {
+        "is_indexed": true
+      }
+    }
+  ],
+  "relations": [
+    {
+      "collection": "campaigns",
+      "field": "thumbnail",
+      "related_collection": "directus_files",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "campaigns",
+        "many_field": "thumbnail",
+        "one_allowed_collections": null,
+        "one_collection": "directus_files",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "schema": {
+        "table": "campaigns",
+        "column": "thumbnail",
+        "foreign_key_table": "directus_files",
+        "foreign_key_column": "id",
+        "constraint_name": "campaigns_thumbnail_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
+      }
+    },
+    {
+      "collection": "campaigns_translations",
+      "field": "campaigns_id",
+      "related_collection": "campaigns",
+      "meta": {
+        "junction_field": "languages_code",
+        "many_collection": "campaigns_translations",
+        "many_field": "campaigns_id",
+        "one_allowed_collections": null,
+        "one_collection": "campaigns",
+        "one_collection_field": null,
+        "one_deselect_action": "delete",
+        "one_field": "translations",
+        "sort_field": null
+      },
+      "schema": {
+        "table": "campaigns_translations",
+        "column": "campaigns_id",
+        "foreign_key_table": "campaigns",
+        "foreign_key_column": "id",
+        "constraint_name": "campaigns_translations_campaigns_id_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "CASCADE"
+      }
+    },
+    {
+      "collection": "campaigns_translations",
+      "field": "languages_code",
+      "related_collection": "languages",
+      "meta": {
+        "junction_field": "campaigns_id",
+        "many_collection": "campaigns_translations",
+        "many_field": "languages_code",
+        "one_allowed_collections": null,
+        "one_collection": "languages",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "schema": {
+        "table": "campaigns_translations",
+        "column": "languages_code",
+        "foreign_key_table": "languages",
+        "foreign_key_column": "code",
+        "constraint_name": "campaigns_translations_languages_code_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT"
+      }
+    },
+    {
+      "collection": "donations",
+      "field": "campaign",
+      "related_collection": "campaigns",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "donations",
+        "many_field": "campaign",
+        "one_allowed_collections": null,
+        "one_collection": "campaigns",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "schema": {
+        "table": "donations",
+        "column": "campaign",
+        "foreign_key_table": "campaigns",
+        "foreign_key_column": "id",
+        "constraint_name": "donations_campaign_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT"
+      }
+    },
+    {
+      "collection": "events",
+      "field": "thumbnail",
+      "related_collection": "directus_files",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "events",
+        "many_field": "thumbnail",
+        "one_allowed_collections": null,
+        "one_collection": "directus_files",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "schema": {
+        "table": "events",
+        "column": "thumbnail",
+        "foreign_key_table": "directus_files",
+        "foreign_key_column": "id",
+        "constraint_name": "events_thumbnail_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
+      }
+    },
+    {
+      "collection": "events_translations",
+      "field": "events_id",
+      "related_collection": "events",
+      "meta": {
+        "junction_field": "languages_code",
+        "many_collection": "events_translations",
+        "many_field": "events_id",
+        "one_allowed_collections": null,
+        "one_collection": "events",
+        "one_collection_field": null,
+        "one_deselect_action": "delete",
+        "one_field": "translations",
+        "sort_field": null
+      },
+      "schema": {
+        "table": "events_translations",
+        "column": "events_id",
+        "foreign_key_table": "events",
+        "foreign_key_column": "id",
+        "constraint_name": "events_translations_events_id_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "CASCADE"
+      }
+    },
+    {
+      "collection": "events_translations",
+      "field": "languages_code",
+      "related_collection": "languages",
+      "meta": {
+        "junction_field": "events_id",
+        "many_collection": "events_translations",
+        "many_field": "languages_code",
+        "one_allowed_collections": null,
+        "one_collection": "languages",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "schema": {
+        "table": "events_translations",
+        "column": "languages_code",
+        "foreign_key_table": "languages",
+        "foreign_key_column": "code",
+        "constraint_name": "events_translations_languages_code_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT"
+      }
+    },
+    {
+      "collection": "news",
+      "field": "thumbnail",
+      "related_collection": "directus_files",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "news",
+        "many_field": "thumbnail",
+        "one_allowed_collections": null,
+        "one_collection": "directus_files",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "schema": {
+        "table": "news",
+        "column": "thumbnail",
+        "foreign_key_table": "directus_files",
+        "foreign_key_column": "id",
+        "constraint_name": "news_thumbnail_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
+      }
+    },
+    {
+      "collection": "news_translations",
+      "field": "news_id",
+      "related_collection": "news",
+      "meta": {
+        "junction_field": "languages_code",
+        "many_collection": "news_translations",
+        "many_field": "news_id",
+        "one_allowed_collections": null,
+        "one_collection": "news",
+        "one_collection_field": null,
+        "one_deselect_action": "delete",
+        "one_field": "translations",
+        "sort_field": null
+      },
+      "schema": {
+        "table": "news_translations",
+        "column": "news_id",
+        "foreign_key_table": "news",
+        "foreign_key_column": "id",
+        "constraint_name": "news_translations_news_id_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "CASCADE"
+      }
+    },
+    {
+      "collection": "news_translations",
+      "field": "languages_code",
+      "related_collection": "languages",
+      "meta": {
+        "junction_field": "news_id",
+        "many_collection": "news_translations",
+        "many_field": "languages_code",
+        "one_allowed_collections": null,
+        "one_collection": "languages",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "schema": {
+        "table": "news_translations",
+        "column": "languages_code",
+        "foreign_key_table": "languages",
+        "foreign_key_column": "code",
+        "constraint_name": "news_translations_languages_code_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT"
+      }
+    },
+    {
+      "collection": "screen_config",
+      "field": "manual_section",
+      "related_collection": "screen_sections",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "screen_config",
+        "many_field": "manual_section",
+        "one_allowed_collections": null,
+        "one_collection": "screen_sections",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "schema": {
+        "table": "screen_config",
+        "column": "manual_section",
+        "foreign_key_table": "screen_sections",
+        "foreign_key_column": "id",
+        "constraint_name": "screen_config_manual_section_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
+      }
+    }
+  ]
+}
